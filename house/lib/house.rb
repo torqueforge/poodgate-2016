@@ -37,6 +37,6 @@ class House
   end
 
   def phrase
-    "the house that Jack built"
+    ["the house that Jack built"].join(" ")
   end
 end
