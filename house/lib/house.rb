@@ -36,4 +36,7 @@ class House
     end
   end
 
+  def phrase
+    "the house that Jack built"
+  end
 end
