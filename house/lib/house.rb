@@ -30,6 +30,7 @@ class House
     else
       "This is #{phrase(num)}.\n"
     end
+    "This is #{phrase(num)}.\n"
   end
 
   def phrase(num=1)
