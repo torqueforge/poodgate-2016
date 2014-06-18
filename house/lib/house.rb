@@ -10,7 +10,7 @@ class House
   def line(num)
     case num
     when 1
-      "This is #{phrase}.\n"
+      "This is #{phrase(num)}.\n"
     when 2
       "This is the malt that lay in #{phrase}.\n"
     when 3
