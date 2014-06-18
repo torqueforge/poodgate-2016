@@ -12,8 +12,8 @@ class House
     when 1
       "This is #{phrase(num)}.\n"
     when 2
-      "This is #{phrase(num)}.\n"
       "This is the malt that lay in #{phrase}.\n"
+      "This is #{phrase(num)}.\n"
     when 3
       "This is the rat that ate the malt that lay in the house that Jack built.\n"
     when 4
