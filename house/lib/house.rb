@@ -35,7 +35,8 @@ class House
   end
 
   def phrase(num=1)
-    [ "the malt that lay in",
+    [ "the rat that ate",
+      "the malt that lay in",
       "the house that Jack built"].last(num).join(" ")
   end
 end
