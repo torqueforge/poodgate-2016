@@ -33,3 +33,9 @@ class Phrases
       "the house that Jack built"]
   end
 end
+
+class RandomPhrase
+  def phrases
+    Phrases.new.phrases.shuffle
+  end
+end
