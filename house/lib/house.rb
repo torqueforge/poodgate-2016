@@ -35,11 +35,11 @@ class Lines
 end
 
 # Know about Lines class
-# class RandomLines
-#   def lines
-#     Lines.new.lines.shuffle
-#   end
-# end
+class RandomLines
+  def lines
+    Lines.new.lines.shuffle
+  end
+end
 
 # Inherit from Lines class, depend on #super
 # class RandomLines < Lines
@@ -48,9 +48,9 @@ end
 #   end
 # end
 
-require 'delegate'
-class RandomLines < SimpleDelegator
-  def lines
-    super.shuffle
-  end
-end
+# require 'delegate'
+# class RandomLines < SimpleDelegator
+#   def lines
+#     super.shuffle
+#   end
+# end

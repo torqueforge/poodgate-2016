@@ -101,7 +101,7 @@ end
 class RandomHouseTest < Minitest::Test
   def test_line_12
     Random.srand(1)
-    tale = House.new(RandomLines.new(Lines.new).lines)
+    tale = House.new(RandomLines.new.lines)
     expected = "This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the malt that lay in the farmer sowing his corn that kept the cow with the crumpled horn that tossed the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.\n"
     assert_equal expected, tale.line(12)
 
