@@ -147,19 +147,18 @@ class MostlyMixedRandomHouseTest < Minitest::Test
     Random.srand(1)
     lines = MostlyMixedRandomLines.new.lines
     expected =
-      [["the rooster that crowed in the morn", "that kept"],
-       ["the priest all shaven and shorn", "that worried"],
-       ["the man all tattered and torn", "that married"],
-       ["the rat", "that belonged to"],
-       ["the farmer sowing his corn", "that killed"],
-       ["the cow with the crumpled horn", "that milked"],
-       ["the horse and the hound and the horn", "that lay in"],
-       ["the dog", "that kissed"],
-       ["the malt", "that woke"],
-       ["the cat", "that ate"],
-       ["the maiden all forlorn", "that tossed"],
-       ["the house", "that Jack built"]]
+    [["the rooster that crowed in the morn", "that kept"],
+     ["the priest all shaven and shorn", "that worried"],
+     ["the man all tattered and torn", "that married"],
+     ["the malt", "that belonged to"],
+     ["the farmer sowing his corn", "that killed"],
+     ["the cow with the crumpled horn", "that milked"],
+     ["the horse and the hound and the horn", "that lay in"],
+     ["the dog", "that kissed"],
+     ["the house", "that woke"],
+     ["the rat", "that ate"],
+     ["the cat", "that tossed"],
+     ["the maiden all forlorn", "that Jack built"]]
     assert_equal expected, lines
   end
-
 end

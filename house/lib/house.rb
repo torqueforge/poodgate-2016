@@ -49,16 +49,18 @@ class MixedRandomLines
   end
 end
 
-# actors and actions, randomized, with last line held constant
+# actors and actions, randomized, with 'Jack Built' held constant
 class MostlyMixedRandomLines
   def lines
     orig = Lines.new.lines
-    transposed = orig[0...-1].transpose
+    transposed = orig.transpose
     actors  = transposed[0].shuffle
-    actions = transposed[1].shuffle
-    [actors, actions].transpose << orig.last
+    actions = transposed[1][0...-1].shuffle << transposed[1].last
+    [actors, actions].transpose
   end
 end
+
+
 
 puts
 puts House.new(MostlyMixedRandomLines.new.lines).line(12)
