@@ -128,23 +128,11 @@ class OrderMixedRandomTest < Minitest::Test
 end
 
 
-class MostlyMixedRandomOrTest < Minitest::Test
+class OrderMostlyMixedRandomTest < Minitest::Test
   def test_lines
     Random.srand(1)
-    lines = MostlyMixedRandomLines.new.lines
-    expected =
-    [["the rooster that crowed in the morn", "that kept"],
-     ["the priest all shaven and shorn", "that worried"],
-     ["the man all tattered and torn", "that married"],
-     ["the malt", "that belonged to"],
-     ["the farmer sowing his corn", "that killed"],
-     ["the cow with the crumpled horn", "that milked"],
-     ["the horse and the hound and the horn", "that lay in"],
-     ["the dog", "that kissed"],
-     ["the house", "that woke"],
-     ["the rat", "that ate"],
-     ["the cat", "that tossed"],
-     ["the maiden all forlorn", "that Jack built"]]
-    assert_equal expected, lines
+    data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
+    expected = [["the house", "1b"], ["3a", "3b"], ["1a", "2b"], ["2a", "that Jack built"]]
+    assert_equal expected, Order::MostlyMixedRandom.new.order(data)
   end
 end

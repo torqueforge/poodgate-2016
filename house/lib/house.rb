@@ -62,18 +62,16 @@ module Order
       [transposed[0].shuffle, transposed[1].shuffle].transpose
     end
   end
-end
 
-
-# actors and actions, randomized, with 'Jack Built' held constant
-class MostlyMixedRandomLines
-  def lines
-    orig = Lines.new.lines
-    transposed = orig.transpose
-    actors  = transposed[0].shuffle
-    actions = transposed[1][0...-1].shuffle << transposed[1].last
-    [actors, actions].transpose
+  class MostlyMixedRandom
+    def order(data)
+      transposed = data.transpose
+      actors  = transposed[0].shuffle
+      actions = transposed[1][0...-1].shuffle << transposed[1].last
+      [actors, actions].transpose
+    end
   end
+
 end
 
 
