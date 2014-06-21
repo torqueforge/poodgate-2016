@@ -55,6 +55,13 @@ class RandomOrder
   end
 end
 
+class MixedRandomOrder
+  def order(data)
+    transposed = data.transpose
+    [transposed[0].shuffle, transposed[1].shuffle].transpose
+  end
+end
+
 # actors and actions, randomized
 class MixedRandomLines
   def lines
@@ -76,5 +83,5 @@ end
 
 
 puts
-puts House.new(Lines.new(RandomOrder.new).lines).line(12)
+puts House.new(Lines.new(MixedRandomOrder.new).lines).line(12)
 puts

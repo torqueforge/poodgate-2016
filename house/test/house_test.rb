@@ -108,6 +108,18 @@ class RandomOrderTest < Minitest::Test
   end
 end
 
+
+class MixedRandomOrderTest < Minitest::Test
+  def test_lines
+    Random.srand(99)
+    data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
+    expected = [["3a", "that Jack built"], ["1a", "3b"], ["the house", "1b"], ["2a", "2b"]]
+    assert_equal expected, MixedRandomOrder.new.order(data)
+  end
+end
+
+
+
 class MixedRandomHouseTest < Minitest::Test
   def test_lines
     Random.srand(1)
