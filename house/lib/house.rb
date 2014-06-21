@@ -1,6 +1,6 @@
 class House
   attr_reader :phrases
-  def initialize(phrases=Phrases.new.phrases)
+  def initialize(phrases=Lines.new.lines)
     @phrases = phrases
   end
 
@@ -17,8 +17,8 @@ class House
   end
 end
 
-class Phrases
-  def phrases
+class Lines
+  def lines
     [ "the horse and the hound and the horn that belonged to",
       "the farmer sowing his corn that kept",
       "the rooster that crowed in the morn that woke",
@@ -34,14 +34,14 @@ class Phrases
   end
 end
 
-# class RandomPhrase
-#   def phrases
-#     Phrases.new.phrases.shuffle
+# class RandomLines
+#   def lines
+#     Lines.new.lines.shuffle
 #   end
 # end
 
-class RandomPhrase < Phrases
-  def phrases
+class RandomLines < Lines
+  def lines
     super.shuffle
   end
 end
