@@ -9,6 +9,10 @@ class House
   end
 
   def phrase(num)
+    phrases.last(num).join(" ")
+  end
+
+  def phrases
     [ "the horse and the hound and the horn that belonged to",
       "the farmer sowing his corn that kept",
       "the rooster that crowed in the morn that woke",
@@ -20,6 +24,6 @@ class House
       "the cat that killed",
       "the rat that ate",
       "the malt that lay in",
-      "the house that Jack built"].last(num).join(" ")
+      "the house that Jack built"]
   end
 end
