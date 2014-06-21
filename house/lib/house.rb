@@ -49,6 +49,12 @@ class DefaultOrder
   end
 end
 
+class RandomOrder
+  def order(data)
+    data.shuffle
+  end
+end
+
 # full lines, randomized
 class RandomLines
   def lines
