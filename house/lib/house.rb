@@ -59,28 +59,40 @@ module Order
     end
   end
 
-  # Randomized the columns
+  # Randomize any number of columns
   class MixedRandom
     def order(data)
-      transposed = data.transpose
-      [transposed[0].shuffle, transposed[1].shuffle].transpose
+      transposing(data) {|columns| columns.collect {|column| column.shuffle}}
+    end
+
+    def transposing(data)
+      yield(data.transpose).transpose
     end
   end
 
-  # Randomized most columns,
-  # but hold the bottom right column ('that Jack built') constant.
+  # Randomize any number of columns,
+  # but hold the bottom right value constant.
   class MostlyMixedRandom
     def order(data)
-      transposed = data.transpose
-      actors  = transposed[0].shuffle
-      actions = transposed[1][0...-1].shuffle << transposed[1].last
-      [actors, actions].transpose
+      bottom_right_value = data.last.last
+
+      mixed = transposing(data) {|columns|
+        columns.collect {|column| column.shuffle}}
+
+      last_col = (cols = mixed.transpose).last
+
+      last_col[last_col.index(bottom_right_value)] = last_col.last
+      last_col[-1] = bottom_right_value
+      cols.transpose
+    end
+
+    def transposing(data)
+      yield(data.transpose).transpose
     end
   end
-
 end
 
 
 puts
-puts House.new(Lines.new(Order::MixedRandom.new).lines).line(12)
+puts House.new(Lines.new(Order::MostlyMixedRandom.new).lines).line(12)
 puts

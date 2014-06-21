@@ -120,9 +120,9 @@ end
 
 class OrderMixedRandomTest < Minitest::Test
   def test_lines
-    Random.srand(99)
+    Random.srand(60)
     data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
-    expected = [["3a", "that Jack built"], ["1a", "3b"], ["the house", "1b"], ["2a", "2b"]]
+    expected = [["3a", "that Jack built"], ["1a", "2b"], ["the house", "1b"], ["2a", "3b"]]
     assert_equal expected, Order::MixedRandom.new.order(data)
   end
 end
