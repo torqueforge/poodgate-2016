@@ -1,4 +1,8 @@
 class House
+  attr_reader :phrases
+  def initialize(phrases=Phrases.new.phrases)
+    @phrases = phrases
+  end
 
   def recite
     1.upto(12).collect {|i| line(i)}.join("\n")
@@ -11,7 +15,9 @@ class House
   def phrase(num)
     phrases.last(num).join(" ")
   end
+end
 
+class Phrases
   def phrases
     [ "the horse and the hound and the horn that belonged to",
       "the farmer sowing his corn that kept",
