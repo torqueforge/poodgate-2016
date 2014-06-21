@@ -42,7 +42,14 @@ end
 # end
 
 # Inherit from Lines class, depend on #super
-class RandomLines < Lines
+# class RandomLines < Lines
+#   def lines
+#     super.shuffle
+#   end
+# end
+
+require 'delegate'
+class RandomLines < SimpleDelegator
   def lines
     super.shuffle
   end
