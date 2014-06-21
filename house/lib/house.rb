@@ -62,14 +62,6 @@ class MixedRandomOrder
   end
 end
 
-# actors and actions, randomized
-class MixedRandomLines
-  def lines
-    transposed = Lines.new.lines.transpose
-    [transposed[0].shuffle, transposed[1].shuffle].transpose
-  end
-end
-
 # actors and actions, randomized, with 'Jack Built' held constant
 class MostlyMixedRandomLines
   def lines

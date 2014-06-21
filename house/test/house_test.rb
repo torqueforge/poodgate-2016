@@ -119,29 +119,6 @@ class MixedRandomOrderTest < Minitest::Test
 end
 
 
-
-class MixedRandomHouseTest < Minitest::Test
-  def test_lines
-    Random.srand(1)
-    lines = MixedRandomLines.new.lines
-    expected =
-      [["the rooster that crowed in the morn", "that kept"],
-       ["the priest all shaven and shorn", "that worried"],
-       ["the man all tattered and torn", "that belonged to"],
-       ["the malt", "that married"],
-       ["the farmer sowing his corn", "that killed"],
-       ["the cow with the crumpled horn", "that lay in"],
-       ["the horse and the hound and the horn", "that milked"],
-       ["the dog", "that Jack built"],
-       ["the house", "that kissed"],
-       ["the rat", "that woke"],
-       ["the cat", "that ate"],
-       ["the maiden all forlorn", "that tossed"]]
-    assert_equal expected, lines
-  end
-end
-
-
 class MostlyMixedRandomHouseTest < Minitest::Test
   def test_lines
     Random.srand(1)
