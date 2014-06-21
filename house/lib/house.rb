@@ -42,6 +42,11 @@ end
 
 class MixedRandomLines
   def lines
-
+    transposed = Lines.new.lines.transpose
+    [transposed[0].shuffle, transposed[1].shuffle].transpose
   end
 end
+
+puts
+puts House.new(MixedRandomLines.new.lines).line(12)
+puts
