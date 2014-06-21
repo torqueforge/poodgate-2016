@@ -1,6 +1,3 @@
-# Feel free to delete the instructions once you get going
-puts instructions(__FILE__)
-
 class House
 
   def recite
@@ -11,7 +8,7 @@ class House
     "This is #{phrase(num)}.\n"
   end
 
-  def phrase(num=1)
+  def phrase(num)
     [ "the horse and the hound and the horn that belonged to",
       "the farmer sowing his corn that kept",
       "the rooster that crowed in the morn that woke",
