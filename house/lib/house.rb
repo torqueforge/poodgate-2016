@@ -72,22 +72,16 @@ module Order
 
   # Randomize any number of columns,
   # but hold the bottom right value constant.
-  class MostlyMixedRandom
+  class MostlyMixedRandom < MixedRandom
     def order(data)
       bottom_right_value = data.last.last
 
-      mixed = transposing(data) {|columns|
-        columns.collect {|column| column.shuffle}}
+      mixed = super(data)
 
       last_col = (cols = mixed.transpose).last
-
       last_col[last_col.index(bottom_right_value)] = last_col.last
       last_col[-1] = bottom_right_value
       cols.transpose
-    end
-
-    def transposing(data)
-      yield(data.transpose).transpose
     end
   end
 end
