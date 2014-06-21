@@ -44,18 +44,22 @@ class Lines
 end
 
 module Order
+
+  # Leave the order unchanged
   class Default
     def order(data)
       data
     end
   end
 
+  # Randomize the rows
   class Random
     def order(data)
       data.shuffle
     end
   end
 
+  # Randomized the columns
   class MixedRandom
     def order(data)
       transposed = data.transpose
@@ -63,6 +67,8 @@ module Order
     end
   end
 
+  # Randomized most columns,
+  # but hold the bottom right column ('that Jack built') constant.
   class MostlyMixedRandom
     def order(data)
       transposed = data.transpose
