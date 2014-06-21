@@ -55,13 +55,6 @@ class RandomOrder
   end
 end
 
-# full lines, randomized
-class RandomLines
-  def lines
-    Lines.new.lines.shuffle
-  end
-end
-
 # actors and actions, randomized
 class MixedRandomLines
   def lines
@@ -83,5 +76,5 @@ end
 
 
 puts
-puts House.new(MostlyMixedRandomLines.new.lines).line(12)
+puts House.new(Lines.new(RandomOrder.new).lines).line(12)
 puts

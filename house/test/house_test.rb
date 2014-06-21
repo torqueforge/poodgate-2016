@@ -98,26 +98,6 @@ This is the horse and the hound and the horn that belonged to the farmer sowing 
 
 end
 
-class RandomHouseTest < Minitest::Test
-  def test_lines
-    Random.srand(1)
-    lines = RandomLines.new.lines
-    expected =
-      [["the rooster that crowed in the morn", "that woke"],
-       ["the priest all shaven and shorn", "that married"],
-       ["the man all tattered and torn", "that kissed"],
-       ["the malt", "that lay in"],
-       ["the farmer sowing his corn", "that kept"],
-       ["the cow with the crumpled horn", "that tossed"],
-       ["the horse and the hound and the horn", "that belonged to"],
-       ["the dog", "that worried"],
-       ["the house", "that Jack built"],
-       ["the rat", "that ate"],
-       ["the cat", "that killed"],
-       ["the maiden all forlorn", "that milked"]]
-    assert_equal expected, lines
-  end
-end
 
 class RandomOrderTest < Minitest::Test
   def test_lines
