@@ -34,7 +34,7 @@ class Lines
 
   attr_reader :orderer
 
-  def initialize(orderer=DefaultOrder.new)
+  def initialize(orderer=Order::Default.new)
     @orderer = orderer
   end
 
@@ -43,24 +43,27 @@ class Lines
   end
 end
 
-class DefaultOrder
-  def order(data)
-    data
+module Order
+  class Default
+    def order(data)
+      data
+    end
+  end
+
+  class Random
+    def order(data)
+      data.shuffle
+    end
+  end
+
+  class MixedRandom
+    def order(data)
+      transposed = data.transpose
+      [transposed[0].shuffle, transposed[1].shuffle].transpose
+    end
   end
 end
 
-class RandomOrder
-  def order(data)
-    data.shuffle
-  end
-end
-
-class MixedRandomOrder
-  def order(data)
-    transposed = data.transpose
-    [transposed[0].shuffle, transposed[1].shuffle].transpose
-  end
-end
 
 # actors and actions, randomized, with 'Jack Built' held constant
 class MostlyMixedRandomLines
@@ -75,5 +78,5 @@ end
 
 
 puts
-puts House.new(Lines.new(MixedRandomOrder.new).lines).line(12)
+puts House.new(Lines.new(Order::MixedRandom.new).lines).line(12)
 puts

@@ -98,13 +98,22 @@ This is the horse and the hound and the horn that belonged to the farmer sowing 
 
 end
 
+class DefaultOrderTest < Minitest
+  def test_lines
+    Random.srand(1)
+    data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
+    expected = data
+    assert_equal expected, Order::Default.new.order(data)
+  end
+end
+
 
 class RandomOrderTest < Minitest::Test
   def test_lines
     Random.srand(1)
     data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
     expected = [["the house", "that Jack built"], ["3a", "3b"], ["1a", "1b"], ["2a", "2b"]]
-    assert_equal expected, RandomOrder.new.order(data)
+    assert_equal expected, Order::Random.new.order(data)
   end
 end
 
@@ -114,7 +123,7 @@ class MixedRandomOrderTest < Minitest::Test
     Random.srand(99)
     data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
     expected = [["3a", "that Jack built"], ["1a", "3b"], ["the house", "1b"], ["2a", "2b"]]
-    assert_equal expected, MixedRandomOrder.new.order(data)
+    assert_equal expected, Order::MixedRandom.new.order(data)
   end
 end
 
