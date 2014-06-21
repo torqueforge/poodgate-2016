@@ -34,8 +34,14 @@ class Phrases
   end
 end
 
-class RandomPhrase
+# class RandomPhrase
+#   def phrases
+#     Phrases.new.phrases.shuffle
+#   end
+# end
+
+class RandomPhrase < Phrases
   def phrases
-    Phrases.new.phrases.shuffle
+    super.shuffle
   end
 end
