@@ -18,7 +18,7 @@ class House
 end
 
 class Lines
-  def lines
+  DATA =
     [["the horse and the hound and the horn", "that belonged to"],
      ["the farmer sowing his corn", "that kept"],
      ["the rooster that crowed in the morn", "that woke"],
@@ -31,6 +31,21 @@ class Lines
      ["the rat", "that ate"],
      ["the malt", "that lay in"],
      ["the house", "that Jack built"]]
+
+  attr_reader :orderer
+
+  def initialize(orderer=DefaultOrder.new)
+    @orderer = orderer
+  end
+
+  def lines
+    orderer.order(DATA)
+  end
+end
+
+class DefaultOrder
+  def order(data)
+    data
   end
 end
 
@@ -59,7 +74,6 @@ class MostlyMixedRandomLines
     [actors, actions].transpose
   end
 end
-
 
 
 puts
