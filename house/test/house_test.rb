@@ -98,7 +98,7 @@ This is the horse and the hound and the horn that belonged to the farmer sowing 
 
 end
 
-class DefaultOrderTest < Minitest
+class OrderDefaultTest < Minitest::Test
   def test_lines
     Random.srand(1)
     data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
@@ -108,7 +108,7 @@ class DefaultOrderTest < Minitest
 end
 
 
-class RandomOrderTest < Minitest::Test
+class OrderRandomTest < Minitest::Test
   def test_lines
     Random.srand(1)
     data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
@@ -118,7 +118,7 @@ class RandomOrderTest < Minitest::Test
 end
 
 
-class MixedRandomOrderTest < Minitest::Test
+class OrderMixedRandomTest < Minitest::Test
   def test_lines
     Random.srand(99)
     data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
@@ -128,7 +128,7 @@ class MixedRandomOrderTest < Minitest::Test
 end
 
 
-class MostlyMixedRandomHouseTest < Minitest::Test
+class MostlyMixedRandomOrTest < Minitest::Test
   def test_lines
     Random.srand(1)
     lines = MostlyMixedRandomLines.new.lines
