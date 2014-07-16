@@ -35,7 +35,7 @@ class Bottles
     end
   end
 
-  def amount(number=0)
+  def amount(number)
     if number == 0
       "no more"
     else
