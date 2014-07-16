@@ -13,7 +13,7 @@ class Bottles
     when 0
       "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
     else
-      "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action}, #{amount(number-1)} #{container(number-1)} of beer on the wall.\n"
+      "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action(number)}, #{amount(number-1)} #{container(number-1)} of beer on the wall.\n"
     end
   end
 
@@ -41,7 +41,7 @@ class Bottles
     end
   end
 
-  def action
+  def action(number)
     "Take #{pronoun(number)} down and pass it around"
   end
 end
