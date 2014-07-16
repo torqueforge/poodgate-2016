@@ -13,7 +13,7 @@ class Bottles
     when 0
       "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
     else
-      "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\nTake #{pronoun(number)} down and pass it around, #{amount(number-1)} #{container(number-1)} of beer on the wall.\n"
+      "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action}, #{amount(number-1)} #{container(number-1)} of beer on the wall.\n"
     end
   end
 
