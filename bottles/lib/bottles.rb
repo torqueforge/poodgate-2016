@@ -15,6 +15,7 @@ class Bottles
     else
       "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action(number)}, #{amount(successor(number))} #{container(successor(number))} of beer on the wall.\n"
     end
+    "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action(number)}, #{amount(successor(number))} #{container(successor(number))} of beer on the wall.\n"
   end
 
   def container(number)
