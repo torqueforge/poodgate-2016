@@ -28,7 +28,11 @@ class Bottles
   end
 
   def pronoun(number=:take_false_branch)
-    "one"
+    if number == 1
+      "it"
+    else
+      "one"
+    end
   end
 
 end
