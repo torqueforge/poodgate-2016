@@ -37,7 +37,7 @@ class Bottles
     if number == 0
       "no more"
     else
-      number
+      number.to_s
     end
   end
 
