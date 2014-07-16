@@ -41,4 +41,7 @@ class Bottles
     end
   end
 
+  def action
+    "Take #{pronoun(number)} down and pass it around"
+  end
 end
