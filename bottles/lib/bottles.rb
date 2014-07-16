@@ -21,7 +21,7 @@ class Bottles
     end
   end
 
-  def container
+  def container(number=:take_else_branch)
     "bottles"
   end
 
