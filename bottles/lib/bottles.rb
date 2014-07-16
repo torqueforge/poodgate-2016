@@ -35,7 +35,7 @@ class Bottles
     end
   end
 
-  def amount
+  def amount(number=:take_false_branch)
     "no more"
   end
 
