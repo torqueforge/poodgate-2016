@@ -27,7 +27,7 @@ class Bottles
     end
   end
 
-  def pronoun
+  def pronoun(number=:take_false_branch)
     "one"
   end
 
