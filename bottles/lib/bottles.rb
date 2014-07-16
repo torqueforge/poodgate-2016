@@ -15,7 +15,7 @@ class Bottles
     when 1
       "#{number} bottle of beer on the wall, #{number} bottle of beer.\nTake #{pronoun(number)} down and pass it around, #{amount(number-1)} bottles of beer on the wall.\n"
     else
-      "#{number} bottles of beer on the wall, #{number} bottles of beer.\nTake #{pronoun(number)} down and pass it around, #{number-1} #{container(number-1)} of beer on the wall.\n"
+      "#{number} bottles of beer on the wall, #{number} bottles of beer.\nTake #{pronoun(number)} down and pass it around, #{amount(number-1)} #{container(number-1)} of beer on the wall.\n"
     end
   end
 
