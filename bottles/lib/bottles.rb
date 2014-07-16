@@ -11,7 +11,7 @@ class Bottles
   def verse(number)
     case number
     when 0
-      "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action(number)}, 99 bottles of beer on the wall.\n"
+      "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action(number)}, 99 #{container(number-1)} of beer on the wall.\n"
     else
       "#{amount(number).capitalize} #{container(number)} of beer on the wall, #{amount(number)} #{container(number)} of beer.\n#{action(number)}, #{amount(number-1)} #{container(number-1)} of beer on the wall.\n"
     end
