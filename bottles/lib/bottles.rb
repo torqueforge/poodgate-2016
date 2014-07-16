@@ -35,4 +35,8 @@ class Bottles
     end
   end
 
+  def amount
+    "no more"
+  end
+
 end
