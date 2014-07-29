@@ -15,6 +15,7 @@ class Bottles
     "#{amount(successor(number))} #{container(successor(number))} of beer on the wall.\n"
   end
 
+  private
   def container(number)
     if number == 1
       "bottle"
