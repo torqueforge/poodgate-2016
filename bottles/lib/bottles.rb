@@ -39,6 +39,7 @@ class BottleNumber
     else
       "bottles"
     end
+    "bottles"
   end
 
   def pronoun
