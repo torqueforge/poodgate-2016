@@ -33,7 +33,7 @@ class BottleNumber
     end
   end
 
-  def pronoun(number=self.number)
+  def pronoun
     if number == 1
       "it"
     else
@@ -41,7 +41,7 @@ class BottleNumber
     end
   end
 
-  def amount(number=self.number)
+  def amount
     if number == 0
       "no more"
     else
@@ -49,7 +49,7 @@ class BottleNumber
     end
   end
 
-  def action(number=self.number)
+  def action
     if number == 0
       "Go to the store and buy some more"
     else
@@ -57,7 +57,7 @@ class BottleNumber
     end
   end
 
-  def successor(number=self.number)
+  def successor
     if number == 0
       99
     else
