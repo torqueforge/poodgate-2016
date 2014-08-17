@@ -25,7 +25,7 @@ class BottleNumber
     @number = number
   end
 
-  def container(number=self.number)
+  def container
     if number == 1
       "bottle"
     else
