@@ -18,14 +18,6 @@ class Bottles
 
   def bottle_number_for(number)
     BottleNumber.for(number)
-    case number
-    when 0
-      BottleNumber0.new(number)
-    when 1
-      BottleNumber1.new(number)
-    else
-      BottleNumber.new(number)
-    end
   end
 end
 
