@@ -70,6 +70,9 @@ class BottleNumber
 end
 
 class BottleNumber0 < BottleNumber
+  def amount
+    "no more"
+  end
 end
 
 class BottleNumber1 < BottleNumber
