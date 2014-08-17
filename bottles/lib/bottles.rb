@@ -16,6 +16,10 @@ class Bottles
     "#{bottle_number.action}, " +
     "#{next_bottle_number.amount} #{next_bottle_number.container} of beer on the wall.\n"
   end
+
+  def bottle_number_for(number)
+    BottleNumber.new(number)
+  end
 end
 
 class BottleNumber
