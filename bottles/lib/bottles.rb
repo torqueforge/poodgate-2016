@@ -11,7 +11,7 @@ class Bottles
   def verse(number)
     bottle_number = BottleNumber.new(number)
     "#{bottle_number.amount.capitalize} #{container(number)} of beer on the wall, " +
-    "#{amount(number)} #{container(number)} of beer.\n" +
+    "#{bottle_number.amount} #{container(number)} of beer.\n" +
     "#{action(number)}, " +
     "#{amount(successor(number))} #{container(successor(number))} of beer on the wall.\n"
   end
