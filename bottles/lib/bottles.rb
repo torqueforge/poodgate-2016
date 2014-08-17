@@ -23,8 +23,6 @@ end
 
 class BottleNumber
   def self.for(number)
-    return number if number.is_a?(BottleNumber)
-
     begin
       Object.const_get("BottleNumber#{number}")
     rescue
