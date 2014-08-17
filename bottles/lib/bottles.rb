@@ -25,12 +25,12 @@ class BottleNumber
   def self.for(number)
     case number
     when 0
-      BottleNumber0.new(number)
+      BottleNumber0
     when 1
-      BottleNumber1.new(number)
+      BottleNumber1
     else
-      BottleNumber.new(number)
-    end
+      BottleNumber
+    end.new(number)
   end
 
   attr_reader :number
