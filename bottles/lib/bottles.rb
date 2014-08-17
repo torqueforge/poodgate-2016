@@ -65,43 +65,43 @@ class BottleNumber
     @number = number
   end
 
-  def container(bottle_number)
-    if bottle_number == 1
+  def container(number)
+    if number == 1
       "bottle"
     else
       "bottles"
     end
   end
 
-  def pronoun(bottle_number)
-    if bottle_number == 1
+  def pronoun(number)
+    if number == 1
       "it"
     else
       "one"
     end
   end
 
-  def amount(bottle_number=self.number)
-    if bottle_number == 0
+  def amount(number=self.number)
+    if number == 0
       "no more"
     else
-      bottle_number.to_s
+      number.to_s
     end
   end
 
-  def action(bottle_number)
-    if bottle_number == 0
+  def action(number)
+    if number == 0
       "Go to the store and buy some more"
     else
-      "Take #{pronoun(bottle_number)} down and pass it around"
+      "Take #{pronoun(number)} down and pass it around"
     end
   end
 
-  def successor(bottle_number)
-    if bottle_number == 0
+  def successor(number)
+    if number == 0
       99
     else
-      bottle_number - 1
+      number - 1
     end
   end
 end
