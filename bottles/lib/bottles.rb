@@ -66,6 +66,9 @@ class BottleNumber
   end
 end
 
+class BottleNumber0 < BottleNumber
+end
+
 class BottleNumber1 < BottleNumber
   def container
     "bottle"
