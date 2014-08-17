@@ -58,6 +58,12 @@ class Bottles
 end
 
 class BottleNumber
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
+  end
+
   def container(bottle_number)
     if bottle_number == 1
       "bottle"
