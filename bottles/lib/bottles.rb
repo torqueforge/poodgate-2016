@@ -23,6 +23,12 @@ end
 
 class BottleNumber
   def self.for(number)
+    begin
+      Object.const_get("BottleNumber#{number}")
+    rescue
+      BottleNumber
+    end.new(number)
+
     case number
     when 0
       BottleNumber0
