@@ -81,7 +81,7 @@ class BottleNumber
     end
   end
 
-  def amount(bottle_number)
+  def amount(bottle_number=self.number)
     if bottle_number == 0
       "no more"
     else
