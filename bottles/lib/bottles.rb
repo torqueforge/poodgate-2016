@@ -22,7 +22,7 @@ class Bottles
   end
 
   def verse(number)
-    bottle_number      = bottle_number_for(number)
+    bottle_number      = number.to_bottle_number
     next_bottle_number = bottle_number.successor
     "#{bottle_number.amount.capitalize} #{bottle_number.container} of beer on the wall, " +
     "#{bottle_number.amount} #{bottle_number.container} of beer.\n" +
