@@ -10,6 +10,8 @@ module BottleNumberFactory
   end
 end
 
+using BottleNumberFactory
+
 class Bottles
   def song
     verses(99, 0)
