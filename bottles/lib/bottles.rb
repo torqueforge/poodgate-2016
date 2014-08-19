@@ -1,3 +1,15 @@
+module BottleNumberFactory
+  refine Fixnum do
+    def to_bottle_number
+      begin
+        Object.const_get("BottleNumber#{self}")
+      rescue
+        BottleNumber
+      end.new(self)
+    end
+  end
+end
+
 class Bottles
   def song
     verses(99, 0)
