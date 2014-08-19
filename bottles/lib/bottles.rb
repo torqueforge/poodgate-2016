@@ -36,14 +36,6 @@ class Bottles
 end
 
 class BottleNumber
-  def self.for(number)
-    begin
-      Object.const_get("BottleNumber#{number}")
-    rescue
-      BottleNumber
-    end.new(number)
-  end
-
   attr_reader :number
 
   def initialize(number)
