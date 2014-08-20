@@ -12,7 +12,7 @@ You will need:
 Clone this repository:
 
 ```bash
-$ git glone https://github.com/torqueforge/$NAME_OF_CLASS.git
+$ git clone https://github.com/torqueforge/$NAME_OF_CLASS.git
 ```
 
 Change directories so that you are in the project:
