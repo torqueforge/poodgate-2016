@@ -1,0 +1,50 @@
+OOD online reference
+  http://sourcemaking.com/
+
+
+Refactoring
+  Martin Fowler: Refactoring, Improving the Design of Existing Code
+    http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672
+    Chapter 9, Simplifying Conditional Expressions
+
+  Jay Fields: Refactoring, Ruby Edition
+    http://www.amazon.com/Refactoring-Edition-Addison-Wesley-Professional-Series/dp/0321984137
+    Chapter 9, Simplifying Conditional Expressions
+
+  Joshua Kerievsky: Refactoring to Patterns
+    http://www.amazon.com/Refactoring-Patterns-Addison-Wesley-Signature-Series-ebook/dp/B001TKD4RQ
+    Chapter 7, Simplification
+
+
+Patterns
+  Gamma, Helm, Johnsom, Vlissides (Gang of Four): Design Patterns,
+  Elements of Reusable Object-Oriented Software
+    http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612
+    Browse the entire book
+
+  Eric Freeman, Bates, Sierra: Head First Design Patterns
+    http://www.amazon.com/Head-First-Design-Patterns-Freeman/dp/0596007124
+    (But only if you can stand the 'Head First' style)
+
+
+Thinking about objects:
+  Sandi Metz: Practical Object-Oriented Design
+    http://www.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330
+
+  Rebecca Wirfs-Brock, Wilkerson, Wiener: Designing Object-Oriented Software
+    http://www.amazon.com/Designing-Object-Oriented-Software-Rebecca-Wirfs-Brock/dp/0136298257
+
+  Matt Weisfeld, The Object-Oriented Thought Process
+    http://www.amazon.com/Object-Oriented-Thought-Process-Developers-Library/dp/0321861272
+
+  Freeman and Pryce: Growing Object-Oriented Software, Guided by Tests (GOOS)
+    http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627
+
+  Eric Evans: Domain Driven Design
+    http://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215
+
+  Domain Driven Design Quickly (pdf)
+    http://www.infoq.com/minibooks/domain-driven-design-quickly
+
+  Vaughn Vernon: Implementing Domain Driven Design
+    http://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577
