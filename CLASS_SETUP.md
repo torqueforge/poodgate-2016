@@ -24,7 +24,7 @@ git push
 To copy a file or folder from another branch into master:
 ```bash
 git checkout master
-git checkout house -- house/
+git checkout origin/house -- house/
 git commit -m 'add house exercise'
 git push
 ```
