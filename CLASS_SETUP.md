@@ -11,20 +11,25 @@ cd /path/to/exercises
 bin/build_class_repo git@github.com:torqueforge/my_new_class.git
 ```
 
+To checkout a remote branch into this new repo:
+```bash
+cd /path/to/new/repo
+git checkout -b farm_1_to_null_object origin/farm_1_to_null_object
+```
 
-To copy a branch into master:
+To copy a file or folder from another branch into master (preferred):
+```bash
+git checkout master
+git checkout origin/house -- house/
+git commit -m 'add house exercise'
+git push
+```
+
+To copy a branch into master (you'll hate yourself):
 ```bash
 git checkout master
 git branch
 git branch -r
 git merge origin/house master
-git push
-```
-
-To copy a file or folder from another branch into master:
-```bash
-git checkout master
-git checkout origin/house -- house/
-git commit -m 'add house exercise'
 git push
 ```
