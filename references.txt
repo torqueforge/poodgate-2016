@@ -1,4 +1,4 @@
-OOD online reference
+OOD online reference (apparently without the permission of Martin Fowler)
   http://sourcemaking.com/
 
 Things to Read:
