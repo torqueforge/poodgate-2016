@@ -81,3 +81,6 @@ Things to Watch:
   Blog posts:
   Dependency Inversion:
     http://abernardes.github.io/2014/11/04/inverting-dependencies.html
+
+  Transformation Priority Premise
+    http://blog.8thlight.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html
