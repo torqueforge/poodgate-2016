@@ -322,7 +322,7 @@ Often I just checkout the branch, copy the code, checkout master, paste the code
 Make sure survey is ok
 Make bit.ly link for survey
 Tell them bit.ly link
-Give the a few minutes to fill out survey
+Give them a few minutes to fill out survey
 Go over survey publically
 
 Do 'Reflect on What I Learned' posters:
@@ -402,22 +402,109 @@ Talk about Code Smells
   * many methods depend more on the argument they got passed then the class as a whole
   * If you were going to divide this class into two parts, where would you split it?
 
+Primative Obsession code smell
+'number' ought to be a first class object which hold onto a single value of number
+  and implements all those methods.  Then you wouldn't have to pass the argument around.
 
 
-Do Extract Class
-Refactoring lesson:
-  1 all methods contain a conditional.
-  2 all methods contain ONLY the conditional. 
-  3 the methods are all switching on the same value 
-  4 that value represents the same concept everywhere 
-  5 each branch of each conditional returns the smallest atomic idea
+Create an empty class
+Copy the methods to it
+Add and attr_reader and initializer for number
+In Bottles, go into every method we've moved and replace contents with
+  BottleNumber.new(number).action(number)
+
+Then remove remove the method arguments one at a time, using a default of
+  self.number.
+
+In Bottles, add 
+
+    bottle_number_for(number) to return BottleNumber.new(number)    
+
+In Bottles#verse
+
+    bottle_number = bottle_number_for(number)
+
+  and replace calls one at at time until forced to
+
+    next_bottle_number = bottle_number_for(bottle_number.successor)
+
+  then finish replacing.
+  
+* Why can't I just say bottle_number.successor, ie, just ask a BottleNumber for its successor?
+
+Because successor returns a Fixnum, not a BottleNumber
+
+* this is a Liskov violation
+* don't try to fix it now, just note it
+* I would prefer to just ask the object I know for something and have to answer be right
+* Don't want to get the result and have to do something to it
+* this is just like the problem of #amount needed to return a 'capitalizable'
+
+In Bottles, delete obsolete code, ie, delete the forwarding methods.
+
+Once Extract Class is done, notice:
+
+* all methods contain a conditional
+* all methods contain ONLY the conditional
+* the methods are all switching on the same value 
+* that value represents the same concept everywhere 
+* each branch of each conditional returns the smallest atomic idea
 
 Is it open/closed to 6-packs?
 
 
+### 99 Bottles, Conditional to Polymorphism
+
+Create BottleNumber0 as subclass of BottleNumber
+Copy one method, maybe #amount into it
+Delete everything but what's needed for 0
+Go into Bottles and get an instance of BottleNumber0 for the 0 case.
+
+    def bottle_number_for(number)
+      if number == 0
+        BottleNumber0.new(number)
+      else
+        BottleNumber.new(number)
+      end
+    end
+
+Remove unneeded code from Bottles#amount
+
+Change:
+
+    def amount
+      if number == 0
+        "no more"
+      else
+        number.to_s
+      end
+    end
+
+To:
+
+    def amount
+      number.to_s
+    end
+
+Repeat until you have BottleNumber0, BottleNumber1 and BottleNumber, and
+a little #bottle_number_for factory method in Bottles.
+
+BREAK
 
 
+They do it.
 
+* Is this open/closed to 6-packs?
+* what would you have to change? (the factory method or the data clump)
+* what don't you like about this code (the factory method, the successor liskov violation)
+* the liskov violation/ugly factory method are related
+
+
+### 99 Bottles, Data Clump
+
+### 99 Bottles, Open/Closed Factories
+
+### 99 Bottles, Write the test for and implement 6-packs
 
 
 
@@ -468,13 +555,9 @@ Before we started extracting the variant hierarchy, we isolated all the conditio
 
 objects at the core of the domain should probably not use inheritance.
 
-
 Talk about when to use inheritance
-Discuss things we don’t like
-  If statement in factory method.
-  Ugly manual forwarding
-  Variant method names are not symmetrical
-  If we make them symmetrical, we have repeating prefix/suffix smell.
+
+
 
 
 # DAY 3
