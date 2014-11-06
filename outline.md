@@ -319,8 +319,13 @@ Often I just checkout the branch, copy the code, checkout master, paste the code
 
 ## Reflect upon day 1
 
+
+
 Make sure survey is ok
 Make bit.ly link for survey
+
+* Tell them to pick a different seat
+
 Tell them bit.ly link
 Give them a few minutes to fill out survey
 Go over survey publically

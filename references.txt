@@ -1,6 +1,3 @@
-OOD online reference (apparently without the permission of Martin Fowler)
-  http://sourcemaking.com/
-
 Things to Read:
   Refactoring
     Martin Fowler: Refactoring, Improving the Design of Existing Code
