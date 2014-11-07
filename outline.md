@@ -319,8 +319,6 @@ Often I just checkout the branch, copy the code, checkout master, paste the code
 
 ## Reflect upon day 1
 
-
-
 Make sure survey is ok
 Make bit.ly link for survey
 
@@ -394,6 +392,7 @@ We're still trying to add 6-packs.
 
 Talk about Code Smells
 
+* Kent Beck coined 'code smell'
 * Martin Fowlers book.
 * Jay Fields book.
 * Every code smell has a corrective refactoring recipe
@@ -411,6 +410,7 @@ Primative Obsession code smell
 'number' ought to be a first class object which hold onto a single value of number
   and implements all those methods.  Then you wouldn't have to pass the argument around.
 
+### DEMO 99 Bottles, DRY to Extract class
 
 Create an empty class
 Copy the methods to it
@@ -457,8 +457,17 @@ Once Extract Class is done, notice:
 
 Is it open/closed to 6-packs?
 
+-----
+LUNCH
+-----
 
-### 99 Bottles, Conditional to Polymorphism
+### They Do -> 99 Bottles, DRY to Extract class
+
+
+### Create SOLID posters
+
+
+### DEMO 99 Bottles, Conditional to Polymorphism
 
 Create BottleNumber0 as subclass of BottleNumber
 Copy one method, maybe #amount into it
@@ -492,76 +501,12 @@ To:
     end
 
 Repeat until you have BottleNumber0, BottleNumber1 and BottleNumber, and
-a little #bottle_number_for factory method in Bottles.
-
-BREAK
-
-
-They do it.
-
-* Is this open/closed to 6-packs?
-* what would you have to change? (the factory method or the data clump)
-* what don't you like about this code (the factory method, the successor liskov violation)
-* the liskov violation/ugly factory method are related
-
+a little #bottle_number_for or #make_bottle_number factory method in Bottles.
 
 ### 99 Bottles, Data Clump
 
-### 99 Bottles, Open/Closed Factories
-
-### 99 Bottles, Write the test for and implement 6-packs
-
-
-
-
-
-Lessons
-Liskov Substitution Principle
-Inheritance
-    Inheritance vs Composition
-    Problems best suited to Inheritance
-    Problems unsuited to Inheritance
-Concepts as Objects
-Factories
-Metaprogramming
-Techniques
-Recipe for refactoring from conditionals to polymorphism
-    Replacing if statements with objects
-
-Show n tell
-  Discuss any different solutions
-  Talk about inheritance vs  composition
-- is-a, has-a 
-historically the way to make code open/closed is inheritance
-inheritance can go badly wrong (and how)
-when you have an instance of verse variant 0, if it receives a message that it doesn’t understand, ruby looks up the hierarchy and finds the implementation in VerseVariant. You get automatic message forwarding. VerseVariant0 doesn’t know about VerseVariant. The price you pay for that is that Variant0 is dependent on the tree.
-There’s no place where it knows any of the methods in the superclass.
-You have to accept the dependency that you’re a kind-of the superclass.
-It gets message forwarding for free.
-- I don’t have to know the names of the methods that I respond to
-- I can’t collaborate with any other object than my superclass. I’m dependent on that one thing.
-
-Opposite relationship. Verse knows about a VerseVariant. There are many methods here (listed in the private). Verse receives them and turns right around and sends it to someone else. Verse has no external dependency on the class VerseVariant.
-It has to explicitly forward the messages to the composed part. The win is that  you could plug anything in there that plays the role. Variant is a duck type. We can inject new objects as long as they implement that role. If I’m willing to pay the price to know, to do the forwarding myelf, then I get the freedom to collaborate with whoever does the right thing.
-
-Which is more flexible? Composition or inheritance? Prefer composition to inheritance (not always. Prefer.)
-
-How does inheritance goes wrong?
-“we end up sticking stuff in there”
-it’s like a knife that turns in your hand.
-Part of your superclass will change for reasons that are unrelated to you, and things begin to go off the rails.
-
-why it’s ok to use inheritance safely here.
-- at the edge of the object graph (leaf node)
-- at least one subclass overrides every single method in the base class. All the behavior is used in the inheritance tree. Everything in the superclass varies (at some point in time).
-I want the subclasses to be a complete specialization of all the behavior in the superclass. We have constrained the superclass to the behavior that we want to override.
-
-Before we started extracting the variant hierarchy, we isolated all the conditionals by themselves.
-
-objects at the core of the domain should probably not use inheritance.
-
-Talk about when to use inheritance
-
+Talk about data clumps.  x,y is Point, starting\_date ending\_date is DateRange, etc.
+Fix the #quantity/#container data clump with #to_s in BottleNumber
 
 
 
@@ -571,9 +516,12 @@ Talk about when to use inheritance
 
 Make sure survey is ok
 Make bit.ly link for survey
+
+* Tell them to pick a different seat
+
 Tell them bit.ly link
-Give the a few minutes to fill out survey
-Go over survey publically
+Give them a few minutes to fill out survey
+Go over survey
 
 Do 'Reflect on What I Learned' posters:
 
@@ -585,54 +533,92 @@ Do 'Reflect on What I Learned' posters:
 
 Do reflection presentations
 
-Update Post-it goals, maybe draw a line for 'want to learn' vs 'learned'
+Update Post-it goals, especially 'learned'
+
+----
+BREAK
+----
+
+### They Do -> 99 Bottles, Conditional to Polymorphism, plus Test and code for 6-packs
+
+They do BottlesConditional to Polymorphism.
+Group discussion of Inheritance vs Composition
+
+  is-a, has-a 
+  historically the way to make code open/closed is inheritance
+  inheritance can go badly wrong (and how)
+  when you have an instance of verse variant 0, if it receives a message that it doesn’t understand, ruby looks up the hierarchy and finds the implementation in VerseVariant. You get automatic message forwarding. VerseVariant0 doesn’t know about VerseVariant. The price you pay for that is that Variant0 is dependent on the tree.
+  There’s no place where it knows any of the methods in the superclass.
+  You have to accept the dependency that you’re a kind-of the superclass.
+  It gets message forwarding for free.
+  * I don’t have to know the names of the methods that I respond to
+  * I can’t collaborate with any other object than my superclass. I’m dependent on that one thing.
+
+  Opposite relationship. Verse knows about a VerseVariant. There are many methods here (listed in the private). Verse receives them and turns right around and sends it to someone else. Verse has no external dependency on the class VerseVariant.
+  It has to explicitly forward the messages to the composed part. The win is that  you could plug anything in there that plays the role. Variant is a duck type. We can inject new objects as long as they implement that role. If I’m willing to pay the price to know, to do the forwarding myelf, then I get the freedom to collaborate with whoever does the right thing.
+
+  Which is more flexible? Composition or inheritance? Prefer composition to inheritance (not always. Prefer.)
+
+  How does inheritance goes wrong?
+  “we end up sticking stuff in there”
+  it’s like a knife that turns in your hand.
+  Part of your superclass will change for reasons that are unrelated to you, and things begin to go off the rails.
+
+  why it’s ok to use inheritance safely here.
+  * at the edge of the object graph (leaf node)
+  * at least one subclass overrides every single method in the base class. All the behavior is used in the inheritance tree. Everything in the superclass varies (at some point in time).
+  I want the subclasses to be a complete specialization of all the behavior in the superclass. We have constrained the superclass to the behavior that we want to override.
+
+  Before we started extracting the variant hierarchy, we isolated all the conditionals by themselves.
+
+  objects at the core of the domain should probably not use inheritance.
+
+  Talk about when to use inheritance
+
+----
+BREAK
+----
+
+Options for remainder of morning: Factories vs Production Code vs re-do all of Bottles
+
+### 99 Bottles, Open/Closed Factories
 
 
 
+----
+LUNCH
+----
 
+### Farm, Null Object Pattern
 
-Create SOLID posters
-
-
-Exercise: 'Farm'
-Lessons
 Recognizing fundamental code shapes that guide OOD
 Techniques
 Null Object Pattern
 
+----
+BREAK
+----
 
-Day 3
-Exercise: 'The Random House that Jack Built'
-Lessons
+### House, Dependency Inversion
+
 Dependency Inversion Principle
 Depending on abstractions
 
 Dependency Injection
     Injecting abstractions to depend on roles
 
-Inheritance revisited
-    Template Method Pattern
-    Hook Methods
-Maybe first: ‘The worm that ate the apple’ or other strings
 
-First, look at the code together. Is this cohesive? In what way is it not. characterize it. In which ways might this song change? I can’t know. Maybe they’ll want to change the algorithm. Or, maybe they’ll change the data. Randomization. Backwards. I should not make anything more flexible than necessary to meet todays requirement.
+  First, look at the code together. Is this cohesive? In what way is it not. characterize it. In which ways might this song change? I can’t know. Maybe they’ll want to change the algorithm. Or, maybe they’ll change the data. Randomization. Backwards. I should not make anything more flexible than necessary to meet todays requirement.
 
-As soon as someone asks me to make random house, it tells me where I need more flexibility. I need to have more than one kind of collaborator in this way.
+  As soon as someone asks me to make random house, it tells me where I need more flexibility. I need to have more than one kind of collaborator in this way.
 
-Now that I know the parts that will vary, I will rearrange this code so that I can vary this part.
-We’re writing the simplest possible code at every moment, but we’re not going to make it variable until we know that we need variability right there.
+  Now that I know the parts that will vary, I will rearrange this code so that I can vary this part.
+  We’re writing the simplest possible code at every moment, but we’re not going to make it variable until we know that we need variability right there.
 
-it has to keep doing what it’s doing
-it has to be open/closed to the randomization
-randomization:
-- just swap the lines around
-- swap who is what to whom
-- end with “house built.”
-
-
-
-Exercise: Applying Lessons to the Real World
-Lessons
-Dealing with the real world
-    Applying class lessons to your own code
+  it has to keep doing what it’s doing
+  it has to be open/closed to the randomization
+  randomization:
+  - just swap the lines around
+  - swap who is what to whom
+  - end with “house built.”
 
