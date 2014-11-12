@@ -512,14 +512,27 @@ Fix the #quantity/#container data clump with #to_s in BottleNumber
 
 # DAY 3
 
-## Reflect upon day 2
+Prep
+* Surveys
+  * Make sure day 2 AND day 3 surveys are ok
+  * Make bit.ly links for surveys
+* Exercises
+  * update House in master
+    * checkout house DRY
+    * copy code in house/lib/house.rb
+    * checkout master
+    * paste DRY house over house/lib/house.rb
+    * add puts House.new.line(12) at bottom
+    * commit and push
+  * update Farm in master
+    * git checkout origin/farm
+    * commit and push 
 
-Make sure survey is ok
-Make bit.ly link for survey
+## Reflect upon day 2
 
 * Tell them to pick a different seat
 
-Tell them bit.ly link
+Tell them bit.ly day 2 survey link
 Give them a few minutes to fill out survey
 Go over survey
 
@@ -599,6 +612,11 @@ Null Object Pattern
 BREAK
 ----
 
+----
+SWAG???
+----
+
+
 ### House, Dependency Inversion
 
 Dependency Inversion Principle
@@ -621,4 +639,12 @@ Dependency Injection
   - just swap the lines around
   - swap who is what to whom
   - end with “house built.”
+
+
+### Do final survey
+
+Tell them bit.ly day 3 survey link
+Give them a few minutes to fill out survey
+
+Hug and go
 
