@@ -10,7 +10,7 @@ Show the repo on the projector or write it on the board
 * This is xxxxx
 * git clone this xxxx repo (for example)
 
-    https://github.com/torqueforge/enova-2014-nov
+    https://github.com/torqueforge/backstopsolutions_2014_nov
 
 * We'll introduce the course in a bit
 * For the next three days you’ll mostly either be working (writing code) or talking to each other
@@ -35,7 +35,7 @@ Get the sanity test running on everyone's machine.
 * after 30 minutes we will interrupt you
 * don't worry about finishing, just write some code to get a sense of the problem
 
-9:14
+9:10 - 9:40
 
 Retrospective:
 
@@ -313,6 +313,14 @@ Often I just checkout the branch, copy the code, checkout master, paste the code
 * if you feel resistance, just write it down. Make a TODO list. Then you can go back to it.
 * How to choose which difference to pick? (The smallest one, the easiest one, the left-most one)
 
+Write the stuff about
+  is it open
+  do you know how to make it open
+  fix the egregious sin
+
+This may loop for a while  
+
+
 
 
 # DAY 2
@@ -326,7 +334,7 @@ Make bit.ly link for survey
 
 Tell them bit.ly link
 Give them a few minutes to fill out survey
-Go over survey publically
+Go over survey publicaly
 
 Do 'Reflect on What I Learned' posters:
 
@@ -361,6 +369,18 @@ If they go off the rails, help them.  If they still go off the rails, hook them
 up to the projector and have the class give them advice.
 
 Check a DRY Bottles into master for us to demo Extract Class
+
+Ask them about their experience:
+  names
+  problems
+  insights
+  did they stop in time?
+  did they stay the course?
+
+Transition to
+  is it open closed?
+  Do you know how to make it open/closed?
+  What's the most egregious sin?
 
 Talk about the characteristics of the DRY Solution
 
