@@ -1,4 +1,4 @@
-gem 'minitest', '~> 5.3'
+gem 'minitest', '~> 5.5'
 require 'minitest/autorun'
 require 'minitest/pride'
 
