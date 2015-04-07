@@ -35,3 +35,9 @@ class House
     data.last(num).join(' ')
   end
 end
+
+class RandomOrder
+  def order(data)
+    data.shuffle
+  end
+end
