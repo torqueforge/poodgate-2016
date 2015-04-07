@@ -14,7 +14,7 @@ class House
     'the house that Jack built']
 
   attr_reader :data
-  def initialize(random=false)
+  def initialize(random=false, orderer: DefaultOrder.new)
     @data =
       if random
         DATA.shuffle
