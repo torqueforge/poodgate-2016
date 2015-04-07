@@ -41,3 +41,9 @@ class RandomOrder
     data.shuffle
   end
 end
+
+class DefaultOrder
+  def order(data)
+    data
+  end
+end
