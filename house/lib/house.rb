@@ -4,6 +4,23 @@ class House
     1.upto(12).collect {|i| line(i)}.join("\n")
   end
 
+  # Now
+  #  when num == 1, phase(num) should return ''
+  #  when num == 2, phase(num) should return 'the malt that lay in '
+  #  when num == 3, phase(num) should return 'the rat that ate the malt that lay in '.
+
+  # If your code may not duplicate 'the malt that ley in ', you must write it down once
+  # and use it in every phrase that needs it.
+
+  # Seeing the solution requires understanding that the '' above is _something_, and that
+  # what's actually needed is:
+  #  when num == 1, phase(num) should return ''
+  #  when num == 2, phase(num) should return 'the malt that lay in ' and ''
+  #  when num == 3, phase(num) should return 'the rat that ate ' and 'the malt that lay in ' and ''.
+
+  # Therefore, handling cases 1, 2 and 3 requires knowing about 3 different strings, and
+  # using one string for case 1, two strings for case 2, and all three strings for case 3.
+
   def phrase(num)
     if num == 1
       ''
