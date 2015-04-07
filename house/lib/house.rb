@@ -6,12 +6,6 @@ class House
 
   def phrase(num)
     ['the rat that ate ', 'the malt that lay in ', ''].last(num).join('')
-
-    if num == 1
-      ''
-    else
-      'the malt that lay in '
-    end
   end
 
   def line(num)
