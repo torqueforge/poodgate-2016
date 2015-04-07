@@ -5,7 +5,9 @@ class House
   end
 
   def phrase(num)
-    ['the rat that ate', 'the malt that lay in', ''].last(num).join(' ')
+    [ 'the rat that ate',
+      'the malt that lay in',
+      ''].last(num).join(' ')
   end
 
   def line(num)
