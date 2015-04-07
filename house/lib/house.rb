@@ -29,3 +29,11 @@ class House
     DATA
   end
 end
+
+class RandomHouse < House
+  def data
+    @data ||= super.shuffle
+  end
+end
+
+puts RandomHouse.new.line(12)
