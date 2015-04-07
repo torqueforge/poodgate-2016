@@ -4,8 +4,12 @@ class House
     1.upto(12).collect {|i| line(i)}.join("\n")
   end
 
-  def phrase
-    'the malt that lay in '
+  def phrase(num=2)
+    if num == 1
+      ''
+    else
+      'the malt that lay in '
+    end
   end
 
   def line(num)
