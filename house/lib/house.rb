@@ -4,6 +4,10 @@ class House
     1.upto(12).collect {|i| line(i)}.join("\n")
   end
 
+  def line(num)
+    "This is #{phrase(num)}the house that Jack built.\n"
+  end
+
   def phrase(num)
     [ 'the horse and the hound and the horn that belonged to',
       'the farmer sowing his corn that kept',
@@ -17,9 +21,5 @@ class House
       'the rat that ate',
       'the malt that lay in',
       ''].last(num).join(' ')
-  end
-
-  def line(num)
-    "This is #{phrase(num)}the house that Jack built.\n"
   end
 end
