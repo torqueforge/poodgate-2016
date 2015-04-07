@@ -97,3 +97,35 @@ This is the horse and the hound and the horn that belonged to the farmer sowing 
   end
 
 end
+
+class RandomHouseTest < Minitest::Test
+  def test_lines
+    Random.srand(1)
+    expected = <<-TEXT
+This is the maiden all forlorn that milked.
+
+This is the cat that killed the maiden all forlorn that milked.
+
+This is the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the cow with the crumpled horn that tossed the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the farmer sowing his corn that kept the cow with the crumpled horn that tossed the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the malt that lay in the farmer sowing his corn that kept the cow with the crumpled horn that tossed the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the man all tattered and torn that kissed the malt that lay in the farmer sowing his corn that kept the cow with the crumpled horn that tossed the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the priest all shaven and shorn that married the man all tattered and torn that kissed the malt that lay in the farmer sowing his corn that kept the cow with the crumpled horn that tossed the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+
+This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the malt that lay in the farmer sowing his corn that kept the cow with the crumpled horn that tossed the horse and the hound and the horn that belonged to the dog that worried the house that Jack built the rat that ate the cat that killed the maiden all forlorn that milked.
+    TEXT
+    assert_equal expected, RandomHouse.new.recite
+  end
+end
