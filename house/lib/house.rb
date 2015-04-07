@@ -4,7 +4,7 @@ class House
     1.upto(12).collect {|i| line(i)}.join("\n")
   end
 
-  def phrase(num=2)
+  def phrase(num)
     if num == 1
       ''
     else
