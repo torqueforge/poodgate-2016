@@ -16,12 +16,12 @@ class House
   attr_reader :data
   def initialize(random=false, orderer: DefaultOrder.new)
     @data = orderer.order(DATA)
-    @data =
-      if random
-        DATA.shuffle
-      else
-        DATA
-      end
+    # @data =
+    #   if random
+    #     DATA.shuffle
+    #   else
+    #     DATA
+    #   end
   end
 
   def recite
