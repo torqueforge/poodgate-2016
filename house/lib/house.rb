@@ -13,9 +13,10 @@ class House
     'the malt that lay in',
     'the house that Jack built']
 
-  attr_reader :data
-  def initialize(random=false, orderer: DefaultOrder.new)
-    @data = orderer.order(DATA)
+  attr_reader :data, :formatter
+  def initialize(random=false, orderer: DefaultOrder.new, formatter: DefaultFormatter.new)
+    @data      = orderer.order(DATA)
+    @formatter = formatter
   end
 
   def recite
@@ -31,7 +32,7 @@ class House
   end
 
   def parts(num)
-    data.last(num)
+    formatter.format(data.last(num))
   end
 end
 
@@ -47,5 +48,20 @@ class DefaultOrder
   end
 end
 
+class EchoFormatter
+  def format(parts)
+    parts.zip(parts)
+  end
+end
+
+class DefaultFormatter
+  def format(parts)
+    parts
+  end
+end
+
 puts "\nRandomHouse"
 puts House.new(orderer: RandomOrder.new).line(12)
+
+puts "\nEchoHouse"
+puts House.new(formatter: EchoFormatter.new).line(12)
