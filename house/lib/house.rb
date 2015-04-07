@@ -42,3 +42,6 @@ class DefaultOrder
     data
   end
 end
+
+puts "\nRandomHouse"
+puts House.new(orderer: RandomOrder.new).line(12)
