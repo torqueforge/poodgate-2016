@@ -129,3 +129,34 @@ This is the rooster that crowed in the morn that woke the priest all shaven and 
     assert_equal expected, RandomHouse.new.recite
   end
 end
+
+class EchoHouseTest < Minitest::Test
+  def test_lines
+    expected = <<-TEXT
+This is the house that Jack built the house that Jack built.
+
+This is the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the cow with the crumpled horn that tossed the cow with the crumpled horn that tossed the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the maiden all forlorn that milked the maiden all forlorn that milked the cow with the crumpled horn that tossed the cow with the crumpled horn that tossed the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the man all tattered and torn that kissed the man all tattered and torn that kissed the maiden all forlorn that milked the maiden all forlorn that milked the cow with the crumpled horn that tossed the cow with the crumpled horn that tossed the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the priest all shaven and shorn that married the priest all shaven and shorn that married the man all tattered and torn that kissed the man all tattered and torn that kissed the maiden all forlorn that milked the maiden all forlorn that milked the cow with the crumpled horn that tossed the cow with the crumpled horn that tossed the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the rooster that crowed in the morn that woke the rooster that crowed in the morn that woke the priest all shaven and shorn that married the priest all shaven and shorn that married the man all tattered and torn that kissed the man all tattered and torn that kissed the maiden all forlorn that milked the maiden all forlorn that milked the cow with the crumpled horn that tossed the cow with the crumpled horn that tossed the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the farmer sowing his corn that kept the farmer sowing his corn that kept the rooster that crowed in the morn that woke the rooster that crowed in the morn that woke the priest all shaven and shorn that married the priest all shaven and shorn that married the man all tattered and torn that kissed the man all tattered and torn that kissed the maiden all forlorn that milked the maiden all forlorn that milked the cow with the crumpled horn that tossed the cow with the crumpled horn that tossed the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+
+This is the horse and the hound and the horn that belonged to the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the farmer sowing his corn that kept the rooster that crowed in the morn that woke the rooster that crowed in the morn that woke the priest all shaven and shorn that married the priest all shaven and shorn that married the man all tattered and torn that kissed the man all tattered and torn that kissed the maiden all forlorn that milked the maiden all forlorn that milked the cow with the crumpled horn that tossed the cow with the crumpled horn that tossed the dog that worried the dog that worried the cat that killed the cat that killed the rat that ate the rat that ate the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+    TEXT
+    assert_equal expected, EchoHouse.new.recite
+  end
+end

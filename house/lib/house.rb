@@ -22,7 +22,11 @@ class House
   end
 
   def phrase(num)
-    data.last(num).join(' ')
+    part(num).join(' ')
+  end
+
+  def part(num)
+    data.last(num)
   end
 
   def data
@@ -36,4 +40,8 @@ class RandomHouse < House
   end
 end
 
-puts RandomHouse.new.line(12)
+class EchoHouse < House
+  def part(num)
+    super.zip(super)
+  end
+end
