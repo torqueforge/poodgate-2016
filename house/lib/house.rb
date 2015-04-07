@@ -65,3 +65,6 @@ puts House.new(orderer: RandomOrder.new).line(12)
 
 puts "\nEchoHouse"
 puts House.new(formatter: EchoFormatter.new).line(12)
+
+puts "\nRandomEchoHouse"
+puts House.new(orderer: RandomOrder.new, formatter: EchoFormatter.new).line(12)
