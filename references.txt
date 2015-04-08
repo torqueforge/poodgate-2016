@@ -30,6 +30,7 @@ Things to Read:
 
     Rebecca Wirfs-Brock, Wilkerson, Wiener: Designing Object-Oriented Software
       http://www.amazon.com/Designing-Object-Oriented-Software-Rebecca-Wirfs-Brock/dp/0136298257
+      http://www.wirfs-brock.com/PDFs/Characterizing%20Classes.pdf
 
     Matt Weisfeld, The Object-Oriented Thought Process
       http://www.amazon.com/Object-Oriented-Thought-Process-Developers-Library/dp/0321861272
@@ -45,6 +46,13 @@ Things to Read:
 
     Vaughn Vernon: Implementing Domain Driven Design
       http://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577
+
+Ruby:
+    Avdi Grimm: Confident Ruby
+    http://www.confidentruby.com/
+
+    Russ Olsen: Eloquent Ruby
+    http://eloquentruby.com/
 
 Things to Watch:
   Design
