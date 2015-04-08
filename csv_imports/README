@@ -1,0 +1,13 @@
+Takes in a CSV string and it parses out the headers and
+the row. Each row is supposed to correspond to a
+`CostCode`. Cost Codes are in a tree structure, each one
+_can_ have a parent. Each one has a code, usually a two
+digit number. 
+
+Codes are identified by their `full_code`, for example a
+CostCode with `code = 01` and a parent with code `01`
+has a `full_code` of `01-01`. 
+
+*New Feature Request*
+Client wants to be able to upload a CSV with 3 tiers (currently only accepts /
+works with 2)
