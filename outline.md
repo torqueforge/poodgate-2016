@@ -1,55 +1,106 @@
+# Pre Class
+
+## Prepare the Repo
+
+Create a new repo under TorqueForge following the directions in CLASS_SETUP.md.
+
+Copy the 99Bottles and House exercises to master.
+
+    git checkout master
+
+    git checkout origin/house -- house/
+    git commit -m 'add house exercise'
+
+    git checkout origin/bottles -- bottles/
+    git commit -m 'add bottles exercise'
+
+    git push
+
+This checks a single folder (house/ or bottles/) out of a branch (origin/house or origin/bottles) and places that folder into master, ready to be commited.
+
+## Prepare the Surveys
+Angela makes them, they're on my google drive under 'Surveys'.
+Each day's survey needs to be checked, and a bitly link must be created for the actual form.
+
+
 # DAY 1
+
+## Supplies
+* small post-it notes (10x-ish times num of students)
+* Poster (wall) sized post-it notes (2 packs)
+* Many colors of sharpie markers
+* Many ballpoint pens
+* Cheap kitchen timer
+
 
 ## Opening
 
-Pass out small post-it notes and pens for use to collect goals later  
-Get name tags on everyone  
-Show the repo on the projector or write it on the board  
+Pass out small post-it notes, pens and sharpies
+Have them write their name on a small post-it attach to back of laptop
+Warn them that they should pick a different seat tomorrow morning
+Show the repo on the projector or write it on the board
 
-* I'm Sandi Metz
-* This is xxxxx
-* git clone this xxxx repo (for example)
+**Say:**
 
+* I'm _xxxx_
+* This is _yyyy_
+* git clone this repo
+* Warning: YOU'LL NEVER CHECK CODE INTO MASTER OF THIS REPO
+
+    for example...
     https://github.com/torqueforge/backstopsolutions_2014_nov
 
 * We'll introduce the course in a bit
-* For the next three days you’ll mostly either be working (writing code) or talking to each other
-* We don’t like to be talked at, we’re going to put you to work immediately.
+* For the next three days you’ll either be working (writing code) or talking to each other
+* We don’t like to be talked at so you'll be writing code right away
 
+Ask if they have experience pairing.  If they don't, discuss how pairing works.
+Have them put themselves into pairs across Ruby and OOD experience.
 
-Deal with pairing issues. Put them into pairs across Ruby and OOD experience.
+If they know one another, they can just do this.
+If they don't know one another, ask them to stand up and arrange themselves in a line based on how much Ruby experience they have.  This is amazingly chaotic, but it works.
 
-Get the sanity test running on everyone's machine.
+Once they're paired, get the sanity test running on everyone's machine.
+
+**Say:** 
 
 * There’s a readme in your repo
-* Following the directions to Run the sanity test
-* You probably need to 'bundle install'
+* Following the directions to run the sanity test
+* Pro-tip: You probably need to 'bundle install'
 
 
 ## Start the Bottles pre-test
 
-* cd bottles
-* ruby test/bottles_test.rb
+**Say:** Here's how you run the tests:
 
-* we have pre-written tests in minitest (it works just like you’d expect)
+    cd bottles
+    ruby test/bottles_test.rb
+
+* we have pre-written tests in minitest
+* who has used minittest (no one) (That's okay, it works just like you’d expect)
 * after 30 minutes we will interrupt you
 * don't worry about finishing, just write some code to get a sense of the problem
+* THIS IS NOT A TEST
+* YOU WILL NOT FINISH, don't worry, THIS IS NOT A TEST
 
-9:10 - 9:40
-
-Retrospective:
+Set the timer for 30 minutes.
+9:15 - 9:45
 
 * we interrupted you, that’s frustrating.
-* we’re annoying you on purpose
-* We will have BREAKS!!!
-* Take a break :-)
+* we are annoying you on purpose
+* we're all about learning theory
+* learning theory says we should take breaks
+* take a break :-)
 
------
-BREAK
------
+**BREAK**
 
+10:00am
 
-## Overview of course
+## Introduce the course
+
+### Explain how it works
+
+Set the timer for 5 minutes to show them we're serious about not talking on and on and then tell them the following things:
 
 * Course structure is dictated by learning theory
 * interrupt and reflect is better than flow for learning
@@ -59,12 +110,14 @@ BREAK
 
 
 ### Preempt the skeptics
+
 * We'll be asking you to learn some new techniques
 * Some of you will find these techniques tedious and boring
-* Don't resist. Suspend disbelief. Commit to learning them. 
-* You can ignore them come Monday if you haven't been convinced.
+* Don't resist. Suspend disbelief. Commit to learning them.
+* You can ignore them after we're gone if you haven't been convinced.
 * You can't choose to ignore them if you don't know them.
 * Think of this as a 3-day coding vacation.
+* Commit to doing what we ask.
 
 
 ### Console the planners
@@ -72,41 +125,48 @@ BREAK
 * We'll learn, and practice, all of the principles of OO Design
 * We'll learn how to remove conditionals
 * Do you have any messy conditionals?
-* Overall schedule is flexible, we have a plan but it will not survive.
-* Syllabus is online for those who need to know where we're going.
-* I need you to have faith for 1.5 days
-* Survey each morning to give us feedback and tweak the course.
+* Overall schedule is flexible, we have a plan but it will not survive
+* Syllabus is online (http://www.sandimetz.com/courses/ follow syllabus link) for those who need to know where we're going
+* I need you to have faith for a while (probably until tomorrow afternoon)
+* Survey each morning to give us feedback and tweak the course
 
 
 ### Collect Goals
 
-Put 4 big poster post-its on wall
-Small post-it notes and pens should have already been passed out)
+About to collect goals, make sure you have a place to put them, perhaps put 4 big poster post-its on wall.  Do not yet put labels on these posters.
 
-* (Public courses) Interview pair, collect their goals on 3 different post-its
-* (Private course) Write 3 goals on 3 different post-its
-* Collect goals and arrange them on posters
-* Talk about OOD, refactoring, testing, misc
+***Give them instructions:***
+
+* (Public courses) Interview your pair, collect their goals on 3 different post-its
+* (Private course) Write your own 3 goals on 3 different post-its
+
+For private courses we collect goals, read each aloud and stick on the wall.
+For public courses the interviewer introduces the interviewee and reads their goals aloud, after we which collect and stick on wall.
+
+As you collect the goal goal post-its, group them into OOD, refactoring, testing, misc.
+Once all the goal post-its are up, have them guess the names of the 4 groups, and then write the label on each group.
 
 
 ## Bottles Show and Tell
 
-* 5 minute lightening talk
-* Tell us your approach and how it led to your solution
-* your job is to applaud wildly when they're done
+***Describe how show and tells work:***
+
+* like 5 minute lightening talk
+* tell us your approach and how it led to your solution
+* if someone has already shown a solution like yours, you don't have to show
+* if you're showing, your job is to finish within 5 minutes
+* if you're watching, your job is to applaud wildly when timer goes off
 
 
 ### During Bottles Show and Tell
 
 * Did you find this exercise easy or hard?
-
-* often embarrassed about code (if lowest hanging green)
-* often didn’t finish (too complicated)
-* inebriation test (if too complicated)
-* compare solutions: is this more complicated or simpler than the previous one?
-* how did you get there? (I saw a pattern and I went there. What if you don’t see a pattern?)
+* Are you proud or embarrassed about your code?
+* Did you finish? (your solution is too complicated)
+* Is your code understandable (would it pass the inebriation test?)
+* Is this solution more complicated or simpler than the previous one?
+* How did you decide what code to write? (I saw a pattern and I went there. What if you don’t see a pattern?)
 * What force drove you to make these decisions?
-
 * For production, would it look like this?
 * Is there complexity here that the test did not force you to implement?
 
@@ -115,17 +175,25 @@ Small post-it notes and pens should have already been passed out)
 
 * Bottles was hard and you didn't finish
 * Save your code in a branch
+* DON'T CHECK CODE INTO MASTER
 * We're going to learn some new techniques
 * We'll return to bottles in a bit and apply the new techniques
 * We'll learn on a simpler example.
 * On to 'The House That Jack Built'
 
+**BREAK**
+
 ## House
 
 ### House, Shameless Green
 
-* cd house
-* ruby test/house_test.rb
+The ```House``` exercise is already in master.
+
+***Say:***
+
+    cd house
+    ruby test/house_test.rb
+
 * same deal as before, unskip the tests one by one
 * strive for the shameless green (whatever that is!)
 * you only get 10 minutes
@@ -136,57 +204,70 @@ Small post-it notes and pens should have already been passed out)
 Define shameless green
 
 * Intersection of maximum comprehensibility with minimum complexity
+* Maximize comprehension, don't worry about changeability
 * Many kinds of duplication are ok
 * Prioritizes getting the tests running green
 * Uses the Red-Green-Refactor cycle
 * Uses simple transformations (see Bob), simple abstractions
-* Waits on ALL the data (all tests green) before creating complicated abstractions
-* Be brave (if you wrote it) and admiring (if you're looking at someone elses code)
+* Collects maximum information (all tests green) before creating complicated abstractions
+* Be brave (if you wrote it) and admiring (if you're looking at someone else's code)
 
 
 Repeat the Bottles Retrospective Questions
 
 * Did you find this exercise easy or hard?
-* often embarrassed about code (if lowest hanging green)
-* often didn’t finish (too complicated)
-* inebriation test (if too complicated)
-* compare solutions: is this more complicated or simpler than the previous one?
-* how did you get there? (I saw a pattern and I went there. What if you don’t see a pattern?)
+* Are you proud or embarrassed about your code?
+* Did you finish? (your solution is too complicated)
+* Is your code understandable (would it pass the inebriation test?)
+* Is this solution more complicated or simpler than the previous one?
+* How did you decide what code to write? (I saw a pattern and I went there. What if you don’t see a pattern?)
 * What force drove you to make these decisions?
-
 * For production, would it look like this?
 * Is there complexity here that the test did not force you to implement?
 
-
-### House, Demo Shameless to DRY
-
-Refactor to simplest possible solution
-Open/Closed Refactoring
-Techniques
-When to refactor
-How to refactor
-What to refactor
-Metrics
-Inebriation test
-Instructions
+By the end of Show & Tell, they should have picked a winner for Shameless Green.
 
 
-Once you have a shameless green, you can refactor.
-Definition of refactoring: Changing the structure/arrangement of code without altering the behavior.
-Open/Closed. Imagine a world.
-Combine refactoring with open/closed. Make the change easy, then make the easy change.
-Send them back to write shameless green if most didn’t achieve it.
-Once they have a shamless green, demo the refactoring technique.
+### House, Shameless to DRY
 
-Show refactoring from low hanging green to dry.
-Rule is, DRY out strings, no repeating phrases.
+***Prep***
+Push a version of House Shameless Green to master.  This can be one of the ones they just wrote, or mine.  To get mine:
 
-FROM my github bottles commit:
-Choose the 'else' and '2' cases as being most alike and make the smallest change that
-make the first difference the same.
+    git checkout master
+    git checkout origin/house_1_shameless_green -- house/
+    git commit -m 'shameless house'
+    git push origin master
 
+Ask for a volunteer to type. Have them do a ```git pull``` and tell them you'll need them to hook up to the projector in just a minute.
+
+
+#### When to Refactor
+Make them define the word 'refactor': 
+"Change the structure/arrangement of code without altering its behavior."
+
+Ask them if they use the word 'refactor' to mean implementing _new_ behavior. (They'll say yes.)  This is not refactoring.
+
+**Ask:** 
+
+  * What does shameless green reveal about the domain of House? 
+    (There are 12 cases/lines) 
+
+  * What is the algorithm for building a line? 
+    (It's cumulative, but you can't tell from the code.)
+
+  * What annoys you most about this code? 
+    (The duplication of strings.)
+
+  * Should you 'refactor' your current implementation house?  I.e., should you do more?
+
+  * Do you have justification to do more?  Perhaps not (discuss, maybe need a new requirement), but let's pretend that we do.
+
+
+#### How to Refactor
 This is the start of DRYing out the strings using a very specific refactoring technique.
-In the micro, the plan is
+
+##### The big picture
+
 1) Parse some code.
 2) Execute the code without using the result. (step is sometimes skipped)
 3) Execute the code and use the result
@@ -194,72 +275,113 @@ In the micro, the plan is
 
 Simple rules.  Like flocking or schooling rules, seemingly complex behavior emerges.
 
-In the macro, the plan is
+##### The specific plan
 1) find the strings that are most alike
-2) find the smallest difference
+2) find the smallest difference between them
 3) make the smallest change that will remove the difference
-4) make changes only on a single line of code
+4) try to make changes only on a single line of code (can't always, but try)
 5) run the tests after each change
 6) if the tests fail, undo and make a better change
 
-A few things to especially note:
-We never chase after red; if the tests fail, undo and make a change that leaves the tests green.
-This can be a real challenge but it's a great learning experience and is a technique well worth knowing.
+##### Other things to say
+Never chase after red; if the tests fail, undo and make a change that leaves the tests green.
 
-The rule is to make small differences the same, NOT to make the big commonalities
-DRY. Don't get distracted by strings that are the _same_, instead identify and remove
-strings that are different.
+The rule is to make small differences the same, NOT to DRY out big commonalities.
+
+Don't get distracted by strings that are the same, instead identify and remove strings that are different.
 
 Do complete 'horizontal' refactorings before switching to a 'vertical' path. This means that once you pick two strings and start making them the same, you should finish this entirely before getting distracted by a third string, no matter how much that other string calls out to you.
 
-To convince the non-believers:
-Who hates this? Who loves this? (breaks down across experience lines?) What do you hate about it?
-You can only choose whether to use the technique if you know it.
-You think this is slow because it is easy (tedious), but it’s easy. but if you don’t do this it is hard.
-Have you ever written code for 15 or 20 minutes and then had to throw it all away, or dug so deep a hole that you did git reset --hard?
-What was wrong?  You thought you knew where you were going, but couldn’t get there. 
+#### Mob DRYing out strings in House
 
-How much complexity ends up in the code that you don’t need, with this technique?
+Get the volunteer typist hooked up to the monitor.
 
-Begin to develop the belief that it’s not inevitable that your production code be the way it is.
+Ask them to do a ```git pull```.
 
-tendency to want to move fast, tendency to want to be clever/smart/complicated
+Tell the class NOT to work along on their own computers.  Right now they should just pay attention and participate; they'll do this exact exercise individually after lunch.
 
+To get everyone to talk, consider asking one small group (3-4 folks) at a time to be responsible for making the next suggestion.  Given them some sort of token to hold when it's their turn, and let them decide who gets the token next.
 
-----
-LUNCH
-----
+Help them with get started.  Ask:
 
+  * Which cases are most alike?
+    They should choose line 1 and line 2.
+  * What is the smallest difference between them?
+    '' or 'the malt that lay in '
+  * What is the smallest change that will remove the difference?
+    If these two things represent the same concept, I should name the concept, and then send a message in this place.
+  * What is the concept?
+    phrase
+  * Okay, create a #phrase method.
+  * What should it return?
 
-### House, Demo Shameless to DRY
+Here they always pick
 
-Now you go do Shameless to DRY 
+    'the malt that lay in '
+
+because they can't wrap their heads around ''.  Just run with it.  See the refactorings in the branches of the repo for the steps.
+
+Make them mob all the way through DRYing out the House strings.  Afterwards:
+
+  * Who hates this technique? Who loves it? (love/hate breaks down across experience lines) 
+  * If you hate it, why?
+  * You can only choose whether to use the technique if you know it.
+  * You think this is slow because it is easy (tedious), but if you don’t do this it is hard and slow.
+  * Have you ever written code for 15 or 20 minutes and then had to throw it all away, or dug so deep a hole that you did git reset --hard?
+  * What was wrong?  You thought you knew where you were going, but couldn’t get there.
+
+  * How much complexity ends up in the code that you don’t need, with this technique?
+
+It is not inevitable that your production code be the way it is.
+
+Your tendency to want to move fast, tendency to want to be clever/smart/complicated
+
+**LUNCH**
+
+### House, They do Shameless to DRY
+
+1:00PM
+
+Have them ```git pull``` and go do House Shameless to DRY
+
+Should not need a Show & Tell, but if you do, do it.
+
+Tell them to put this problem away, and we'll return to it on day 3.  Now we'll return to Bottles and find Shameless Green and then apply these refactoring rules to see what happens.
+
 
 ## 99 Bottles, Rodux
 
+1:45PM ish
+
 ### 99 Bottles, Shameless Green
 
+***Say:***
 * commit outstanding work to a branch
 * cd bottles
-* start over and write shameless green
-* 15 minutes
-* when you get done, come ring the bell
+* start over and write bottles shameless green
+* you get 15 minutes
 
 ### 99 Bottles, Shameless Green Show & Tell
 
-* We're having a bake off
-* Make your best pitch that you win the Shameless Green
+***Tell them:***
+
+* We're having a bake off.
+* Make your best pitch that you win the Shameless Green.
+
+***For each Show & Tell, ask:***
 
 * Did you write more code than the tests require? (the test suite is deliberately bad)?
 * Did you get **all** the tests passing before you started making methods?
 
-Things they might have done
+They might put evil pair code in #verse, #verses and #song to pass the tests.  If so, ask:
 
-* put heredoc in song (not simple, but shameless)
-* put 100 cases (not simple, not really shameless, more typing)
-* 4 cases
+* What responsibility does #verse have? (produce any verse)
+* What about #verses?  (call #verse for any range of verse numbers, or produce all the verses?)
+* What about #song? 
 
-For every attempt, ask these questions:
+Only #verse is responsible for producing a verse, the other methods are responsible for algorithms.
+
+For every Show & Tell, ask these questions:
 
 * how many verse variants are there?
 * which verses are most alike?
@@ -267,95 +389,137 @@ For every attempt, ask these questions:
 * in what way?
 * what's the algorithm for looping?
 
-* Is the code production ready? (if it’s never going to change, then of course!)
+After all Show & Tells:
+Have them choose a Shameless Green Winner.
 
-Have them choose a Shamless Green Winner.
-Check the winning Shameless Green and test with skips removed into master.
-Often I just checkout the branch, copy the code, checkout master, paste the code, and commit.
+***Ask:***
 
+* Is the winning code production ready? (if it’s never going to change, then of course!)
 
-  When you start the statement with “if you want to change…” you know you’re guessing.
+***Things you might discuss:***
 
-  We’re making assumptions about the kinds of changes that are going to come,
-  but we never know. 
-  Is this about where you would stop in order to put this into production?
+When you start the statement with “if you want to change…” you know you’re guessing.
 
-  What kinds of changes might happen that would create problems? 
-  Do we know it’s going to change or are we guessing?
+This makes assumptions about the kinds of changes that are going to come, but we never know.
 
-  There is a place to guess. We want exemplary code. If I have experience that tells me that this customer will want x, y, z, then I might be justified to make the guess IFF a novice programmer is coming behind me. If it’s me who’s coming behind, then I can just do it when I ask.
+What kinds of changes might occur that this code can't easily handle?
 
+If I wait until I have the next requirement to refactor, will it cost more, or less?
 
-  Single Responsibility Principle
-  Open/Closed Principle
-  Techniques
-  Extract Method
-  Extract Class
-  Refactorings as recipes
-  Step-wise refactoring to reach for Open/Closed
+There is a place to guess. We want exemplary code. If I have experience that tells me that this customer will want x, y, z, then I might be justified to make the guess IF a novice programmer is coming behind me. If it’s me who’s coming behind, then I can just do it when I ask.
 
-### 99 Bottles, Shameless Green to DRY 
+Get a Bottles Shameless Green into master.  Either take theirs, or
 
-* Should we stop here?
+    git checkout master
+    git checkout origin/bottles_1_shameless -- bottles/
+    git commit -m 'shameless bottles'
+    git push origin master
+
+Whichever you choose, you should now have a Bottles Shameless green, and tests with no skips, in master.
+
+**BREAK**
+
+### 99 Bottles, Mob Shameless Green to DRY
+3:00pm ish
+
+As break is ending, get another volunteer typist.
+
+***ASK:***
+
+* Should we stop here at Bottles Shameless Green?
 * What would justify a change to this code?
-* Introduce 6-packs
-* Talk about open/closed
-  * is this code open/closed to 6-packs
-  * do you know how to make it open/closed
-  * fix the most aggregious sin
-* biggest sin is duplication of strings 
-* Demo shameless to DRY
+* Introduce 6-packs requirement.
+* Talk about open/closed.
 
-* which cases are the most similar? What is the smallest difference?
-* A ‘string’ is the entire return in the case branch.
-* Tension between what the squint test would leads you to do, and keeping long strings for left-right refactoring.
-* Don’t put another ball in the air.  Finish the refactoring you’re on.  Finish the thought. (http://www.threeriversinstitute.org/blog/?p=594)
-* if you feel resistance, just write it down. Make a TODO list. Then you can go back to it.
-* How to choose which difference to pick? (The smallest one, the easiest one, the left-most one)
+Ask them what the O in SOLID stands for. (Open/Closed)
+Ask them what Open/Closed is short for. (Open for extension/Closed for Modification)
+Ask them what that means.
 
-Write the stuff about
-  is it open
-  do you know how to make it open
-  fix the egregious sin
+Talk briefly about open/closed:
 
-This may loop for a while  
+* Imagine a world in which you never have to change existing code to implement new behavior.
+* Don't worry that this seems impossible, just pretend for a minute that it's true.
+* If it's true, what are the consequences?
+
+Make sure they say:
+  Adding new behavior can't break distant and unrelated things.
+  Your existing tests are always green.
+
+You should deal with new requirements in two steps.
+
+  1. Make the existing code open to the new requirement
+  1. Implement the new requirement
+
+When thinking about a new requirement:
+
+  * Flowchart questions: 
+    * is this code open/closed to 6-packs
+    * do you know how to make it open/closed
+    * fix the most approachable sin
+
+For Bottles Shameless:
+
+  * What is the most approachable sin?  What do you hate most, that you understand and know how to fix? (duplication of strings)
+  * You know how to fix duplication of strings... the flocking rules.
+
+### Bottles, Mob shameless to DRY
+
+Repeat the refactoring rules from before.
+Get the volunteer typist hooked up.
+Don't allow the typist to think.
+Rotate around the room, making small groups responsible for telling the typist the next thing to do.
 
 
+***Say:***
+
+* don't type along; you'll each do this tomorrow morn.
+* if you feel the urge to jump vertically, don't stray from the path, just write your issue down. Make a TODO list. You can go back to it.
+
+As they mob this: 
+
+  * point out that the flocking rules cause you to write methods that are mini examples of open/closed.  We put 'if' statements in the methods to make the methods 'open' to use in new places.
+  * remember that they'll encounter a Liskov violation when they try to send capitalize to #amount so that, in the 0 case, 'no more' will turn into 'No more'.  They should send #to_s to the number inside of the #amount method.  The method should return a trustworthy object; it should return something that understands #capitalize.
+  * when extracting a method, they'll occasionally choose the non-else case as the first thing they return.  This requires that they use a real value (not :fixme) as the default for the parameter.  Give them time to understand this.
+  * Many times they can make things the same by using a no-op.  This is an important idea.  The _concept_ exists, even if it can sometimes be implemented as a no-op.
+
+
+***OFFICE HOURS***
 
 
 # DAY 2
 
 ## Reflect upon day 1
+9:00am
 
 Make sure survey is ok
 Make bit.ly link for survey
 
-* Tell them to pick a different seat
+* Remind them to pick a different seat
 
 Tell them bit.ly link
 Give them a few minutes to fill out survey
-Go over survey publicaly
+Go over survey publicly
 
 Do 'Reflect on What I Learned' posters:
 
 * get in groups of 4 or 5
-* get a wall-sized post-it
-* discuss what you learned yesteday
-* draw something that represents it.  
-* you can make a boring list, but we have lots of colors, why not draw?
+* discuss what you learned yesterday
+* take a wall post-it and draw something that represents it, or
+* Classes have done poetry, Ms Manners questions, art, plays, etc.  The bar is high.
+* You get 30 minutes.  You'll run out of ideas at 15 minutes.  Stick with it, the best ideas happen if you persevere. Don't quit and read email at the 16 min mark.
 
 Do reflection presentations
 
-Update Post-it goals, maybe draw a line for 'want to learn' vs 'learned'
+Tell them to take a break, but during the break to update their post-it goals.  This is always a bit confusing.  Lately I've been telling them to update the wall to reflect their current goals.  They can find a move their previous goals, or put up new goals.  They can dot-vote by putting blank new post-its somewhere.  They can rip a post-it in half.  Whatever.  We just want them to think.
 
-----
-BREAK
-----
+***BREAK***
 
+Update Post-it goals during break.
 
 ## Bottles, Redux, continued
 
-### 99 Bottles, Shameless Green to DRY, continued
+### 99 Bottles, They do Shameless Green to DRY
+10:00am
 
 Make sure they 'git pull', which should get them the 'Shameless' from which we demoed
 
@@ -364,9 +528,18 @@ Make sure they 'git pull', which should get them the 'Shameless' from which we d
 * if you get done, go through it again with the other person typing
 * don't go off the rails, get one of us before you go off the rails
 
-This might take two iteractions.
+This might take two iterations.
 If they go off the rails, help them.  If they still go off the rails, hook them
 up to the projector and have the class give them advice.
+
+
+
+
+
+___
+Everything from here down is pending updates
+
+
 
 Check a DRY Bottles into master for us to demo Extract Class
 
@@ -441,9 +614,9 @@ In Bottles, go into every method we've moved and replace contents with
 Then remove remove the method arguments one at a time, using a default of
   self.number.
 
-In Bottles, add 
+In Bottles, add
 
-    bottle_number_for(number) to return BottleNumber.new(number)    
+    bottle_number_for(number) to return BottleNumber.new(number)
 
 In Bottles#verse
 
@@ -454,7 +627,7 @@ In Bottles#verse
     next_bottle_number = bottle_number_for(bottle_number.successor)
 
   then finish replacing.
-  
+
 * Why can't I just say bottle_number.successor, ie, just ask a BottleNumber for its successor?
 
 Because successor returns a Fixnum, not a BottleNumber
@@ -471,8 +644,8 @@ Once Extract Class is done, notice:
 
 * all methods contain a conditional
 * all methods contain ONLY the conditional
-* the methods are all switching on the same value 
-* that value represents the same concept everywhere 
+* the methods are all switching on the same value
+* that value represents the same concept everywhere
 * each branch of each conditional returns the smallest atomic idea
 
 Is it open/closed to 6-packs?
@@ -546,7 +719,7 @@ Prep
     * commit and push
   * update Farm in master
     * git checkout origin/farm
-    * commit and push 
+    * commit and push
 
 ## Reflect upon day 2
 
@@ -561,7 +734,7 @@ Do 'Reflect on What I Learned' posters:
 * get in groups of 4 or 5
 * get a wall-sized post-it
 * discuss what you learned yesteday
-* draw something that represents it.  
+* draw something that represents it.
 * you can make a boring list, but we have lots of colors, why not draw?
 
 Do reflection presentations
@@ -577,7 +750,7 @@ BREAK
 They do BottlesConditional to Polymorphism.
 Group discussion of Inheritance vs Composition
 
-  is-a, has-a 
+  is-a, has-a
   historically the way to make code open/closed is inheritance
   inheritance can go badly wrong (and how)
   when you have an instance of verse variant 0, if it receives a message that it doesn’t understand, ruby looks up the hierarchy and finds the implementation in VerseVariant. You get automatic message forwarding. VerseVariant0 doesn’t know about VerseVariant. The price you pay for that is that Variant0 is dependent on the tree.
@@ -667,4 +840,9 @@ Tell them bit.ly day 3 survey link
 Give them a few minutes to fill out survey
 
 Hug and go
+
+
+
+
+***Notes***
 
