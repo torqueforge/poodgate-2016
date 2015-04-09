@@ -4,7 +4,7 @@ class Farm
   attr_reader :animals
 
   def initialize(animals)
-    @animals = animals
+    @animals = animals.collect {|animal| animal || NullAnimal.new }
   end
 
   def lyrics
@@ -12,7 +12,6 @@ class Farm
   end
 
   def verse(animal)
-    animal ||= NullAnimal.new
     sound   = animal.sound
     species = animal.species
     "Old MacDonald had a farm, E-I-E-I-O,\n" +
