@@ -13,8 +13,9 @@ class Farm
 
   def verse(animal)
     if animal.nil?
-      sound   = "<silence>"
-      species = "<silence>"
+      null_animal = NullAnimal.new
+      sound   = null_animal.sound
+      species = null_animal.species
     else
       sound   = animal.sound
       species = animal.species
