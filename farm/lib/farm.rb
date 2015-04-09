@@ -33,3 +33,9 @@ class NullAnimal
     '<silence>'
   end
 end
+
+class ReliableAnimal
+  def self.all(ids)
+    Animal.all(ids).collect {|animal| animal.nil? ? NullAnimal.new : animal}
+  end
+end
