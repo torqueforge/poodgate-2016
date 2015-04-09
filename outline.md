@@ -16,7 +16,7 @@ Copy the 99Bottles and House exercises to master.
 
     git push
 
-This checks a single folder (house/ or bottles/) out of a branch (origin/house or origin/bottles) and places that folder into master, ready to be commited.
+This checks a single folder (house/ or bottles/) out of a branch (origin/house or origin/bottles) and places that folder into master, ready to be committed.
 
 ## Prepare the Surveys
 Angela makes them, they're on my google drive under 'Surveys'.
@@ -197,7 +197,10 @@ The ```House``` exercise is already in master.
 * same deal as before, unskip the tests one by one
 * strive for the shameless green (whatever that is!)
 * you only get 10 minutes
-* cut and paste is your friend
+* copy and paste is your friend
+* after 5 minutes, ask them "Are you gonna be done? If not, change strategies."
+
+
 
 ### House, Shameless Green show & tell
 
@@ -298,16 +301,16 @@ Get the volunteer typist hooked up to the monitor.
 
 Ask them to do a ```git pull```.
 
-Tell the class NOT to work along on their own computers.  Right now they should just pay attention and participate; they'll do this exact exercise individually after lunch.
+Tell the class NOT to work along on their own computers.  Right now they should just pay attention and participate; they'll each do this exact exercise after lunch.
 
 To get everyone to talk, consider asking one small group (3-4 folks) at a time to be responsible for making the next suggestion.  Given them some sort of token to hold when it's their turn, and let them decide who gets the token next.
 
-Help them with get started.  Ask:
+Move to the back of the room and help them get started.  Ask:
 
   * Which cases are most alike?
     They should choose line 1 and line 2.
   * What is the smallest difference between them?
-    '' or 'the malt that lay in '
+    '' (empty string) versus 'the malt that lay in '
   * What is the smallest change that will remove the difference?
     If these two things represent the same concept, I should name the concept, and then send a message in this place.
   * What is the concept?
@@ -321,20 +324,22 @@ Here they always pick
 
 because they can't wrap their heads around ''.  Just run with it.  See the refactorings in the branches of the repo for the steps.
 
-Make them mob all the way through DRYing out the House strings.  Afterwards:
+Make them mob all the way through DRYing out the House strings.  
+
+Things you might ask afterwards:
 
   * Who hates this technique? Who loves it? (love/hate breaks down across experience lines) 
   * If you hate it, why?
-  * You can only choose whether to use the technique if you know it.
-  * You think this is slow because it is easy (tedious), but if you don’t do this it is hard and slow.
+  * Can you imagine this technique being useful?  In what situation?
+  * Is it slow, or just boring? 
   * Have you ever written code for 15 or 20 minutes and then had to throw it all away, or dug so deep a hole that you did git reset --hard?
   * What was wrong?  You thought you knew where you were going, but couldn’t get there.
+  * With this technique, how much complexity ends up in the code that you don’t need?
 
-  * How much complexity ends up in the code that you don’t need, with this technique?
+Remind them:
 
-It is not inevitable that your production code be the way it is.
-
-Your tendency to want to move fast, tendency to want to be clever/smart/complicated
+  * It is not inevitable that your production code be the way it is.
+  * Your tendency to want to move fast, tendency to want to be clever/smart/complicated
 
 **LUNCH**
 
@@ -342,11 +347,16 @@ Your tendency to want to move fast, tendency to want to be clever/smart/complica
 
 1:00PM
 
-Have them ```git pull``` and go do House Shameless to DRY
+Consider asking them to switch pairs.
 
-Should not need a Show & Tell, but if you do, do it.
+Have them ```git pull``` and do House Shameless to DRY in pairs
 
-Tell them to put this problem away, and we'll return to it on day 3.  Now we'll return to Bottles and find Shameless Green and then apply these refactoring rules to see what happens.
+Should not need a Show & Tell, but if necessary, do it.
+
+Tell them:
+
+ * put this problem away, it'll return on the afternoon of day 3.  
+ * now we'll return to Bottles and find Shameless Green and then apply these refactoring rules to see what happens.
 
 
 ## 99 Bottles, Rodux
@@ -356,10 +366,14 @@ Tell them to put this problem away, and we'll return to it on day 3.  Now we'll 
 ### 99 Bottles, Shameless Green
 
 ***Say:***
+
 * commit outstanding work to a branch
 * cd bottles
 * start over and write bottles shameless green
 * you get 15 minutes
+* remember how well copy/paste worked for House
+
+At the 25 minute mark, ask if they'll be done.  If some say no, ask how much more time they need and add that amount to the timer.
 
 ### 99 Bottles, Shameless Green Show & Tell
 
@@ -370,8 +384,8 @@ Tell them to put this problem away, and we'll return to it on day 3.  Now we'll 
 
 ***For each Show & Tell, ask:***
 
-* Did you write more code than the tests require? (the test suite is deliberately bad)?
-* Did you get **all** the tests passing before you started making methods?
+* Did you write more code than the tests require?
+* Did you get **all** the tests passing before you started extracting methods?
 
 They might put evil pair code in #verse, #verses and #song to pass the tests.  If so, ask:
 
@@ -415,14 +429,14 @@ Get a Bottles Shameless Green into master.  Either take theirs, or
     git commit -m 'shameless bottles'
     git push origin master
 
-Whichever you choose, you should now have a Bottles Shameless green, and tests with no skips, in master.
+Whichever you choose, master should now contain a Bottles Shameless green, and tests with no skips.
 
 **BREAK**
 
 ### 99 Bottles, Mob Shameless Green to DRY
 3:00pm ish
 
-As break is ending, get another volunteer typist.
+As break is ending, get another volunteer typist.  Make sure they do a ```git pull```.
 
 ***ASK:***
 
@@ -442,15 +456,18 @@ Talk briefly about open/closed:
 * If it's true, what are the consequences?
 
 Make sure they say:
+_If my code where open/closed:
   Adding new behavior can't break distant and unrelated things.
-  Your existing tests are always green.
+  My existing tests would always run green._
+
+***Tell them:***
 
 You should deal with new requirements in two steps.
 
   1. Make the existing code open to the new requirement
   1. Implement the new requirement
 
-When thinking about a new requirement:
+Questions they should ask when thinking about a new requirement:
 
   * Flowchart questions: 
     * is this code open/closed to 6-packs
@@ -459,8 +476,9 @@ When thinking about a new requirement:
 
 For Bottles Shameless:
 
-  * What is the most approachable sin?  What do you hate most, that you understand and know how to fix? (duplication of strings)
-  * You know how to fix duplication of strings... the flocking rules.
+  * What is the most approachable sin, i.e.,
+  * What do you hate most, that you actually understand and know immediately how to fix? (duplication of strings)
+  * Okay, then, go fix the string duplication using the flocking rules.
 
 ### Bottles, Mob shameless to DRY
 
@@ -473,7 +491,7 @@ Rotate around the room, making small groups responsible for telling the typist t
 ***Say:***
 
 * don't type along; you'll each do this tomorrow morn.
-* if you feel the urge to jump vertically, don't stray from the path, just write your issue down. Make a TODO list. You can go back to it.
+* if you feel the urge to jump vertically, don't stray from the path, just write your issue down. Make a TODO list if it makes you feel better about not going on a tangent. You can go back to it later.
 
 As they mob this: 
 
@@ -495,18 +513,19 @@ Make sure survey is ok
 Make bit.ly link for survey
 
 * Remind them to pick a different seat
+* Tell them bit.ly link
 
-Tell them bit.ly link
 Give them a few minutes to fill out survey
 Go over survey publicly
 
 Do 'Reflect on What I Learned' posters:
 
-* get in groups of 4 or 5
+* get in groups of 4 or 5 
+(have them count off going around the room, which creates groups made of folks who are sitting far apart)
 * discuss what you learned yesterday
-* take a wall post-it and draw something that represents it, or
-* Classes have done poetry, Ms Manners questions, art, plays, etc.  The bar is high.
-* You get 30 minutes.  You'll run out of ideas at 15 minutes.  Stick with it, the best ideas happen if you persevere. Don't quit and read email at the 16 min mark.
+* take a wall post-it and draw something that represents it, or...
+* classes have done poetry, Ms Manners questions, art, plays, etc.  The bar is high.
+* you get 30 minutes.  You'll run out of ideas at 15 minutes.  Stick with it, the best ideas happen if you persevere. Don't quit and read email at the 16 min mark.
 
 Do reflection presentations
 
@@ -523,144 +542,178 @@ Update Post-it goals during break.
 
 Make sure they 'git pull', which should get them the 'Shameless' from which we demoed
 
-* 30 minutes to DRY out the strings
+***Say:***
+
+* you have 30 minutes to DRY out the strings
 * we'll see where you are, might need more time
 * if you get done, go through it again with the other person typing
-* don't go off the rails, get one of us before you go off the rails
+* don't go off the rails, get one of us if you're tempted
 
 This might take two iterations.
-If they go off the rails, help them.  If they still go off the rails, hook them
-up to the projector and have the class give them advice.
+If some get confused, help them.  
+If all get confused, hook someone up to the projector and have the class give them advice.
+
+You should not need a Show & Tell, but if people go wrong in creative ways it can be useful to have them save a copy of the hole they fell into, and then show it to the class later.  
+
+Even if you don't do a Show & Tell, get them to talk to each other about how it went.
+
+***Ask:***
+  
+  * was this easy?
+  * was it interesting or boring?
+  (They may avoid confessing that they were bored for fear of hurting your feelings. Make sure they know you'll be happy if they describe this as boring. Boring is good.)
+  * did you feel safe or at risk?
+  * did you have any problems? What kind? Why? How did you fix them?
+  * what method names did you choose?
+  * would you guess that all the solutions are alike?
+  * if so, why?
+  * might it have business value for certain problems to get solved the same way by everyone?
+
+***Say:***
+
+  * This is a resting point, the end of a horizontal refactoring.
+  * Remember we only did this because we want 6-packs.
+
+***Ask:***
+
+  * is this code better or worse then what we started with?
+    * what would flog say?
+    * we turned one conditional into many :-)
+    * it flogs worse
+  * is anything better?
+    * string duplication is gone
+    * concepts have names
+  * is this better overall than shameless green?
+
+  * what's next?
+    * Flowchart
+        * is the code open to the 6-packs requirement?
+        * do you know how to make it open?
+        * then fix the most approachable sin
+  * what is that sin?
 
 
+#### Characteristics of the DRY Bottles Solution
 
+***Ask:***
 
+  * what do you notice about method shape?
+  (methods with if statements have a common shape)
+  * do methods with if statements contain any code other than the if statement?
+  (no) 
+  (remind them that their pre-test bottles wasn't like this at all)
+  (each true/false branch is the most atomic thing at the intersection of the concept named by the method and a specific value of number)
+  * if you added the private keyword, where would you put it?
+  * what do you notice about method arguments?
+  * does argument 'number' represent the same thing everywhere?
+  * do the private methods depend more on the argument that got passed, or more on the class as a whole?
+  * what do we call these things?
+  (code smells)
+  * what are code smells
+  (a sign that something might be wrong)
+  * how to you fix code smells?
+  (with curative refactoring recipes)
+  * who can tell us the name of some code smell they're familiar with?
+  (well, sometimes they can :-) )
+  * what are the names of the code smells in this code?
+  (primitive obsession, feature envy)
+  * what's a primitive?
+  (the number)
+  * what's the refactoring recipe that cures primitive obsession
+  (extract class)
 
-___
-Everything from here down is pending updates
+Yeah, we wish we had a smarter number, and that's the next refactoring.
 
+'number' ought to be a first class object which hold onto a single value of number and implements all those methods; then you wouldn't have to pass the argument around, you could just get the right object and send it a message.
 
+**BREAK**
 
-Check a DRY Bottles into master for us to demo Extract Class
+### 99 Bottles, Mob DRY to Extract class
 
-Ask them about their experience:
-  names
-  problems
-  insights
-  did they stop in time?
-  did they stay the course?
+11:00am-ish
 
-Transition to
-  is it open closed?
-  Do you know how to make it open/closed?
-  What's the most egregious sin?
+Get the correct code into master, either the DRY solution they just created, or the one from the repo.
 
-Talk about the characteristics of the DRY Solution
+    git checkout master
+    git checkout origin/bottles_2_shameless_to_dry -- bottles/
+    git commit -m 'DRY bottles'
+    git push origin master
 
-- methods depend on the argument that got passed
-- the if statements are duplicated in all the private methods
-- the solution is apparently more complicated
-- each private method has the same shape
-- only one public method uses the private methods *******
-- that public method also takes the same parameter and when we name it verse this method gets extracted along
-- return values in the branches of the conditionals are the smallest atomic piece, and it’s the piece described by the method name
-- each private method has ONLY a conditional
+Get a new volunteer typist, have them ```git pull```.
 
-
-* is this code more complicated or simplier? What would flog say?
-* we've turned one conditional into many!!!
-* is this better or worse than Shameless Green?
-
-
-### 99 Bottles, DRY to Extract class
-
-We're still trying to add 6-packs.
-
-* Is DRY Bottles open closed to 6-packs?
-  * Would you have to edit this class?
-* Do you know how to make it open/closed?
-* Fix the most aggregious sin
-
-* What is the sin?
-
-Talk about Code Smells
-
-* Kent Beck coined 'code smell'
-* Martin Fowlers book.
-* Jay Fields book.
-* Every code smell has a corrective refactoring recipe
-* If you could only recognize code smells, you could apply the correct recipe
-* What are the code smells in 99 Bottles DRY?
-
-  * clusters of similar shapes
-  * private methods
-  * many methods take the same argument
-    * what does the argument represent?  Trace it all the way back to enumeration.
-  * many methods depend more on the argument they got passed then the class as a whole
-  * If you were going to divide this class into two parts, where would you split it?
-
-Primative Obsession code smell
-'number' ought to be a first class object which hold onto a single value of number
-  and implements all those methods.  Then you wouldn't have to pass the argument around.
-
-### DEMO 99 Bottles, DRY to Extract class
-
+This next refactoring is in the bottles\_3\_dry\_to\_bottle\_number branch, but generally you:
 Create an empty class
 Copy the methods to it
 Add and attr_reader and initializer for number
-In Bottles, go into every method we've moved and replace contents with
+In Bottles, go into every method we've copied over and replace it's contents with
   BottleNumber.new(number).action(number)
 
-Then remove remove the method arguments one at a time, using a default of
-  self.number.
+Then remove remove the method arguments one at a time, using a default of (number=self.number) or (sneakily) changing the name of the number argument to something else (notused=:deleteme)
 
-In Bottles, add
+Once they get all of the forwarding in place, all of the forwarded methods can be made obsolete by just getting an instance of BottleNumber (well, two instances) in the #verse method. Have them do this next.
 
-    bottle_number_for(number) to return BottleNumber.new(number)
+When they attempt to get the 'next' BottleNumber, they should be unhappy with the #successor method.  They'll want successor to return a BottleNumber instead of a Fixnum.  Make sure they understand the problem:
 
-In Bottles#verse
+  * this is a Liskov violation
+  * don't try to fix it now, just note it
+  * I would prefer to just ask the object I know for something and have to answer be right
+  * Don't want to get the result and have to do something to it
+  * this is just like the problem of #amount needed to return a 'capitalizable'
 
-    bottle_number = bottle_number_for(number)
+The #successor method is easiest to deal with as part of the 'factory' problem.  They don't really understand it, use that fact to urge them to put it off.
 
-  and replace calls one at at time until forced to
+***Say:***
 
-    next_bottle_number = bottle_number_for(bottle_number.successor)
+  * Don't ignore the simple problems and just to the hard ones.
+  * Instead, fix the simple problems and the hard ones disappear.
 
-  then finish replacing.
 
-* Why can't I just say bottle_number.successor, ie, just ask a BottleNumber for its successor?
+Once Extract Class is done, ask:
 
-Because successor returns a Fixnum, not a BottleNumber
+  * tell me about the shape of the methods.
+  (all methods contain a conditional)
+  * does any method contain anything but that conditional?
+  (no)
+  * tell me about the condition itself, what is it testing?
+  (the methods all switch on some explicit value of 'number')
+  * what concept does 'number' represent?
+  (the number of bottles)
+  * does any method have more than one responsibility? 
+  (no, each branch of each conditional returns the smallest atomic idea)
 
-* this is a Liskov violation
-* don't try to fix it now, just note it
-* I would prefer to just ask the object I know for something and have to answer be right
-* Don't want to get the result and have to do something to it
-* this is just like the problem of #amount needed to return a 'capitalizable'
+***Ask:***
 
-In Bottles, delete obsolete code, ie, delete the forwarding methods.
+* is this code better of worse than Shameless Green?
+* how does it flog?
+* is it open/closed to 6-packs?
 
-Once Extract Class is done, notice:
+O, my, we've managed to make things even worse.  Let's have...
 
-* all methods contain a conditional
-* all methods contain ONLY the conditional
-* the methods are all switching on the same value
-* that value represents the same concept everywhere
-* each branch of each conditional returns the smallest atomic idea
+**LUNCH**
 
-Is it open/closed to 6-packs?
+### 99 Bottles, They do DRY to Extract class
 
------
-LUNCH
------
+1:00pm
 
-### They Do -> 99 Bottles, DRY to Extract class
-
+Make sure they all ```git pull```.
 
 ### Create SOLID posters
 
+2:00pm
 
-### DEMO 99 Bottles, Conditional to Polymorphism
+Have them count off from 1-5 or S-D (S O L I D)
+give them 35 minutes to take a 5 min break and then do 30 mins research
+have them give 5 minute presentations (this is a great opportunity for them to nourish their inner playwrights. )
+
+### MOB 99 Bottles, Conditional to Polymorphism
+
+3:00pm
+
+**SHORT BREAK**
+
+Help them get started with bottles\_4\_bottle\_number\_to\_no\_conditionals.  You should only have to prompt them to create one subclass and fix one method, and they should get the rest on their own.  Stand in the back and relinquish control as soon as possible.
+
+Process:
 
 Create BottleNumber0 as subclass of BottleNumber
 Copy one method, maybe #amount into it
@@ -693,13 +746,18 @@ To:
       number.to_s
     end
 
-Repeat until you have BottleNumber0, BottleNumber1 and BottleNumber, and
+Repeat until they have BottleNumber0, BottleNumber1 and BottleNumber, and
 a little #bottle_number_for or #make_bottle_number factory method in Bottles.
+
+--------------------
+updates pending below this line
+
 
 ### 99 Bottles, Data Clump
 
 Talk about data clumps.  x,y is Point, starting\_date ending\_date is DateRange, etc.
 Fix the #quantity/#container data clump with #to_s in BottleNumber
+
 
 
 
