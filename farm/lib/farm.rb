@@ -15,15 +15,6 @@ class Farm
     animal ||= NullAnimal.new
     sound   = animal.sound
     species = animal.species
-
-    if animal.nil?
-      null_animal = NullAnimal.new
-      sound   = null_animal.sound
-      species = null_animal.species
-    else
-      sound   = animal.sound
-      species = animal.species
-    end
     "Old MacDonald had a farm, E-I-E-I-O,\n" +
     "And on that farm he had #{species.articlize}, E-I-E-I-O,\n" +
     "With #{sound.articlize} #{sound} here " +
