@@ -4,7 +4,7 @@ class Farm
   attr_reader :animals
 
   def initialize(animals)
-    @animals = animals.collect {|animal| animal || NullAnimal.new }
+    @animals = animals
   end
 
   def lyrics
