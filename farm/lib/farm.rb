@@ -12,6 +12,10 @@ class Farm
   end
 
   def verse(animal)
+    animal ||= NullAnimal.new
+    sound   = animal.sound
+    species = animal.species
+
     if animal.nil?
       null_animal = NullAnimal.new
       sound   = null_animal.sound
