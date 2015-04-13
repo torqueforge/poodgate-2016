@@ -703,22 +703,55 @@ Make sure they all ```git pull```.
 
 Have them count off from 1-5 or S-D (S O L I D)
 give them 35 minutes to take a 5 min break and then do 30 mins research
-have them give 5 minute presentations (this is a great opportunity for them to nourish their inner playwrights. )
+have them give 5 minute presentations (this is a great opportunity for them to nourish their inner playwrights)
+Their presentation should include a definition, examples (in code and/or in life) and places in class or in their own applications where they follow/break the rule.
+
+**SHORT BREAK**
 
 ### MOB 99 Bottles, Conditional to Polymorphism
 
 3:00pm
 
-**SHORT BREAK**
+
+If planning to start from my extracted class, be sure you:
+
+    git checkout master
+    git checkout origin/origin/bottles_3_dry_to_bottle_number -- bottles/
+    git commit -m 'extracted BottleNumber class'
+    git push origin master
+
+and then have them
+
+    git pull
+
+Remind them of the current state of the code.  
+
+* BottleNumber has been extracted.
+* Once created, instances never mutate. They're thread-safe.
+* Methods all contain conditionals that switch on 'number'.
+* 'number' represents the same thing in every case.
+
+Notice that we still have the Primitive Obsession code smell, but now we're obsessing on not just a Fixnum, but on a specific value of a Fixnum.  This is only obvious because of the shape of the code, and the code is only shaped this way because we following the refactoring (flocking) rules.
 
 Help them get started with bottles\_4\_bottle\_number\_to\_no\_conditionals.  You should only have to prompt them to create one subclass and fix one method, and they should get the rest on their own.  Stand in the back and relinquish control as soon as possible.
 
 Process:
 
+(In all of the following, run the tests at every opportunity.)
+
 Create BottleNumber0 as subclass of BottleNumber
-Copy one method, maybe #amount into it
-Delete everything but what's needed for 0
-Go into Bottles and get an instance of BottleNumber0 for the 0 case.
+Copy one method (maybe #amount) into the new subclass.
+Delete everything but what's needed for 0.
+
+In Bottles you now need to get a subclass of the _right_ class, based on the value of the Fixnum.  
+
+Go into Bottles and get an instance of BottleNumber0 for the 0 case. Since the following code knows the name of the BottleNumber class in two places we'd have to change this code in both places to conditionally get a new BottleNumber or BottleNumber0. 
+
+    def verse(number)
+      bottle_number      = BottleNumber.new(number)
+      next_bottle_number = BottleNumber.new(bottle_number.successor)
+
+Putting the same conditional in there twice is crazy; it's time for a factory.
 
     def bottle_number_for(number)
       if number == 0
@@ -728,7 +761,7 @@ Go into Bottles and get an instance of BottleNumber0 for the 0 case.
       end
     end
 
-Remove unneeded code from Bottles#amount
+After the Factory is in use, you can delete the unused code from #amount up in BottleNumber.
 
 Change:
 
@@ -749,79 +782,187 @@ To:
 Repeat until they have BottleNumber0, BottleNumber1 and BottleNumber, and
 a little #bottle_number_for or #make_bottle_number factory method in Bottles.
 
---------------------
-updates pending below this line
-
-
 ### 99 Bottles, Data Clump
 
-Talk about data clumps.  x,y is Point, starting\_date ending\_date is DateRange, etc.
-Fix the #quantity/#container data clump with #to_s in BottleNumber
+Define data clumps, for example, if you're always passing x,y around, you might need a Point class, or is you're passing starting\_date,ending\_date, you might need a DateRange class.
 
+If you turn data clumps into objects, behavior will coalesce into the new classes.
+
+Fix the #quantity/#container data clump in verse by adding #to_s in BottleNumber.
+
+
+### Day 2 options
+
+Classes which have students of widely different backgrounds tend to splinter during the afternoon of day2/morning of day 3.  If you have students who are finishing everything early, give them one or more of the following assignments (all presentations are to be 5 minutes:
+
+* Help teach the students who are behind on the exercises
+(Tell them that teaching is a great learning experience, and challenge them to only ask questions of their 'students'.)
+* Do research on the methods in Enumerable, and make a presentation showing useful ways to enumerate over Arrays.
+* Play with adhoc/ruby_hierachy.rb file (you'll have to pull this folder into master) in irb and pry, and make a presentation.
+* Make a presentation about refinements: what they are, the scope in which they are active.
+* Factory explorations
+  * Fix the #successor Liskov violation
+  * Use const_get to make the factory we have open closed
+  * Do factory escalations
+      * What if you want the factory to be open to new subclasses? (metaprogramming, #const_get)
+      * What if you want better names? (Hash, YML, database list)
+      * What if you put the factory in a conversion method on Fixnum? (monkey patch)
+      * What if you want to disperse the logic that chooses the right class into the class that might be chosen (handler pattern)?
 
 
 
 # DAY 3
 
-Prep
-* Surveys
-  * Make sure day 2 AND day 3 surveys are ok
-  * Make bit.ly links for surveys
-* Exercises
-  * update House in master
-    * checkout house DRY
-    * copy code in house/lib/house.rb
-    * checkout master
-    * paste DRY house over house/lib/house.rb
-    * add puts House.new.line(12) at bottom
-    * commit and push
-  * update Farm in master
-    * git checkout origin/farm
-    * commit and push
+Prep the repo:
 
-## Reflect upon day 2
+    git checkout master
 
-* Tell them to pick a different seat
+    git checkout origin/house_2a_pre_random -- house/
+    git commit -m 'house pre random'
 
-Tell them bit.ly day 2 survey link
+    git checkout origin/farm -- farm/
+    git commit -m 'add farm exercise'
+
+    git push
+
+Remind them to pick a different seat.
+
+Have them do surveys and reflection as per day 2.
+
+**BREAK**
+
+10:00am
+
+### 99 Bottles, They do Conditional to Polymorphism
+
+This seems easy, but they may have trouble with the Factory, and fixing the Liskov violation in the successor method.  Give them lots of help.  You can also identify the folks that get it and have them mentor groups of 3 or 4.
+
+Once they all get through the conditional to polymorphism refactoring...
+
+### MOB 99 Bottles, Add 6-packs
+
+This is so easy and so satisfying that it's best to do it as a group.
+
+They should first change the tests (we're now back in the red-green-refactor cycle).
+
+If it's not lunch-time yet, have some of them give presentations here.  Usually, however, presentations happen after lunch.
+
+
+**LUNCH**
+
+### Farm, Null Object Pattern
+
+Introduce the Farm exercise.  
+
+* Tell them about 40 times that they cannot change Animal and that they should pretend they can't see the code in Animal.
+* Show the 'articalize' refinement.  Tell them not to worry about it; it just works.
+* Tell everyone if they look at the problem and already know the solution, that they can't let the cat out of the bag for others.  They are welcome to help teach, but they must do so by asking leading questions, not by explaining the NullObject Pattern.
+
+The goal is to get them to express this problem as one they know], and then to fix it with the technique they learned in Bottles.  That means they have to write to entire 'if' statement down, and then get an object to stand in for both the true branch and the false branch.  Since Animal already exists, they just need to figure out that they should create NullAnimal.
+
+Sometimes they write the if statement and say "I see, I could just monkey patch nil to add #sound and #species".  If they say this, let them...
+
+    class NilClass
+      def sound
+        "<silence>"
+      end
+      def species
+        "<silence>"
+      end
+    end
+
+And then once they get it working, tell then that the methods are exactly right, but ask if it makes sense to put them on NilClass.  When they say, "Err, well, no", ask them what class they go on.  Once they decide to create a NullAnimal or MissingAnimal or something
+
+    class MissingAnimal
+      def sound
+        "<silence>"
+      end
+      def species
+        "<silence>"
+      end
+    end
+
+help them figure out how to swap nils for instances of MissingAnimal, and then push the conditional up to the #initialize method, and then out into a wrapper.
+
+Remember that creating a wrapper introduces and API breaking chance and requires that you change the tests.  Sometimes it's worth it. :-)
+
+**SHORT BREAK**
+
+**SWAG??**
+
+### Remaining Presentations
+For however long it takes.
+
+### House, Random and Echo
+
+Let's drive them into a hole using inheritance.
+
+RandomHouse Instructions:
+  * Randomize the list ONCE before you start producing the Tale. 
+      * Don't randomize over and over again, randomize once!
+  * The rules are: you can't use a conditional, and House must be open to the new requirement.
+  * Tell them that inheritance is perfect and to go write it.
+
+EchoHouse Instructions:
+  * Each bit should appear twice.
+      * This is the house that Jack built the house that Jack built.
+      * This is the malt that lay in the malt that lay in the house that Jack built the house that Jack built.
+      * etc.
+  * Same rules.  No conditionals, House must be open.
+  * Tell them again to just go use inheritance.
+
+RandomEchoHouse Instructions:
+  * Still want House, random house and echo house.
+  * Same rules.  No conditionals, House must be open.
+  * New rule.  You may not duplicate any code.
+
+Now inheritance is broken.
+
+At this point it's easiest to ```git reset --HARD```, and edit House to take a random boolean and test it.
+
+      attr_reader :data
+      def initialize(random=false)
+        @data =
+          if random
+            DATA.shuffle
+          else
+            DATA
+          end
+      end
+
+This is the problem they know, and they should be able to figure out that they need an object for each branch of the conditional.  
+
+These objects play a common role.
+They must name the role, define the API, create various objects to play the role, and inject them into House.
+
+They should create an Order role, and then perhaps a Formatter role.
+This is a good place to introduce them to named parameters, if it hasn't already come up.
+
+Make them demo House, random house, echo house and random echo house.
+
+Once they get this done, continue to add new variants.  All previous variants must continue to work, plus
+  * Hold 'the house the Jack built' last, shuffle only lines 1-11.
+  * Mix up actors 'the malt' and actions 'that lay in'. 
+  Each line has a trailing 'that'.  This final, trailing 'that' separates the actor from the action.
+  * Mix up actors 'the priest', modifiers 'all shaven and shorn' and actions 'the married'.
+  Not every line has a modifier, assume the modifier is '' if it doesn't exist.
+
+I don't have new refactorings for these variants, but some examples are in the old house\_x\_old\_exploration branch.
+
+
+### Do final survey
+
+Tell them the bit.ly day 3 survey link
 Give them a few minutes to fill out survey
-Go over survey
 
-Do 'Reflect on What I Learned' posters:
+Hug and go
 
-* get in groups of 4 or 5
-* get a wall-sized post-it
-* discuss what you learned yesteday
-* draw something that represents it.
-* you can make a boring list, but we have lots of colors, why not draw?
 
-Do reflection presentations
 
-Update Post-it goals, especially 'learned'
+------------
+------------
+pending
 
-----
-BREAK
-----
-
-### They Do -> 99 Bottles, Conditional to Polymorphism, plus Test and code for 6-packs
-
-They do BottlesConditional to Polymorphism.
-Group discussion of Inheritance vs Composition
-
-  is-a, has-a
-  historically the way to make code open/closed is inheritance
-  inheritance can go badly wrong (and how)
-  when you have an instance of verse variant 0, if it receives a message that it doesn’t understand, ruby looks up the hierarchy and finds the implementation in VerseVariant. You get automatic message forwarding. VerseVariant0 doesn’t know about VerseVariant. The price you pay for that is that Variant0 is dependent on the tree.
-  There’s no place where it knows any of the methods in the superclass.
-  You have to accept the dependency that you’re a kind-of the superclass.
-  It gets message forwarding for free.
-  * I don’t have to know the names of the methods that I respond to
-  * I can’t collaborate with any other object than my superclass. I’m dependent on that one thing.
-
-  Opposite relationship. Verse knows about a VerseVariant. There are many methods here (listed in the private). Verse receives them and turns right around and sends it to someone else. Verse has no external dependency on the class VerseVariant.
-  It has to explicitly forward the messages to the composed part. The win is that  you could plug anything in there that plays the role. Variant is a duck type. We can inject new objects as long as they implement that role. If I’m willing to pay the price to know, to do the forwarding myelf, then I get the freedom to collaborate with whoever does the right thing.
-
-  Which is more flexible? Composition or inheritance? Prefer composition to inheritance (not always. Prefer.)
 
   How does inheritance goes wrong?
   “we end up sticking stuff in there”
@@ -833,74 +974,5 @@ Group discussion of Inheritance vs Composition
   * at least one subclass overrides every single method in the base class. All the behavior is used in the inheritance tree. Everything in the superclass varies (at some point in time).
   I want the subclasses to be a complete specialization of all the behavior in the superclass. We have constrained the superclass to the behavior that we want to override.
 
-  Before we started extracting the variant hierarchy, we isolated all the conditionals by themselves.
-
   objects at the core of the domain should probably not use inheritance.
-
-  Talk about when to use inheritance
-
-----
-BREAK
-----
-
-Options for remainder of morning: Factories vs Production Code vs re-do all of Bottles
-
-### 99 Bottles, Open/Closed Factories
-
-
-
-----
-LUNCH
-----
-
-### Farm, Null Object Pattern
-
-Recognizing fundamental code shapes that guide OOD
-Techniques
-Null Object Pattern
-
-----
-BREAK
-----
-
-----
-SWAG???
-----
-
-
-### House, Dependency Inversion
-
-Dependency Inversion Principle
-Depending on abstractions
-
-Dependency Injection
-    Injecting abstractions to depend on roles
-
-
-  First, look at the code together. Is this cohesive? In what way is it not. characterize it. In which ways might this song change? I can’t know. Maybe they’ll want to change the algorithm. Or, maybe they’ll change the data. Randomization. Backwards. I should not make anything more flexible than necessary to meet todays requirement.
-
-  As soon as someone asks me to make random house, it tells me where I need more flexibility. I need to have more than one kind of collaborator in this way.
-
-  Now that I know the parts that will vary, I will rearrange this code so that I can vary this part.
-  We’re writing the simplest possible code at every moment, but we’re not going to make it variable until we know that we need variability right there.
-
-  it has to keep doing what it’s doing
-  it has to be open/closed to the randomization
-  randomization:
-  - just swap the lines around
-  - swap who is what to whom
-  - end with “house built.”
-
-
-### Do final survey
-
-Tell them bit.ly day 3 survey link
-Give them a few minutes to fill out survey
-
-Hug and go
-
-
-
-
-***Notes***
 
