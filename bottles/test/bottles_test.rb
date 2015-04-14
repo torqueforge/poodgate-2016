@@ -1,6 +1,3 @@
-gem 'minitest', '~> 5.5'
-require 'minitest/autorun'
-require 'minitest/pride'
 require_relative '../../test_helper'
 require_relative '../lib/bottles'
 
