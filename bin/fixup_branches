@@ -47,7 +47,7 @@ for branch in "${branches[@]}"; do
     git add test_helper.rb
 
     if ! git diff-index --quiet HEAD --; then  # if there's anything to commit
-        git commit -uno -m 'fixup_branches script'
+        git commit -uno -m 'run fixup_branches script'
     fi
   fi
 done
