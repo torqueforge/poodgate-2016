@@ -25,13 +25,13 @@ end
 
 class MixedActorActionFixedLastOrder
   def order(data)
-    data[0..-2].transpose.collect {|row| row.shuffle}.transpose + data.last
+    data[0..-2].transpose.collect {|row| row.shuffle}.transpose << data.last
   end
 end
 
 class FixedLastRandomOrder
   def order(data)
-    data[0..-2].shuffle + data.last
+    data[0..-2].shuffle << data.last
   end
 end
 

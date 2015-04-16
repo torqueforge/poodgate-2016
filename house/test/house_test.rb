@@ -107,7 +107,6 @@ class DefaultOrderTest < Minitest::Test
   end
 end
 
-
 class RandomOrderTest < Minitest::Test
    def test_lines
     Random.srand(1)
@@ -116,3 +115,22 @@ class RandomOrderTest < Minitest::Test
     assert_equal expected, RandomOrder.new.order(data)
   end
 end
+
+class FixedLastRandomOrderTest < Minitest::Test
+  def test_lines
+    Random.srand(1)
+    data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
+    expected = [["1a", "1b"], ["3a", "3b"], ["2a", "2b"], ["the house", "that Jack built"]]
+    assert_equal expected, FixedLastRandomOrder.new.order(data)
+  end
+end
+
+class MixedActorActionFixedLastOrderTest < Minitest::Test
+  def test_lines
+    Random.srand(1)
+    data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
+    expected = [["1a", "2b"], ["3a", "3b"], ["2a", "1b"], ["the house", "that Jack built"]]
+    assert_equal expected, MixedActorActionFixedLastOrder.new.order(data)
+  end
+end
+
