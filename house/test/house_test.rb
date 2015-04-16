@@ -100,7 +100,6 @@ end
 
 class DefaultOrderTest < Minitest::Test
   def test_lines
-    Random.srand(1)
     data     = [['1a', '1b'], ['2a', '2b'], ['3a', '3b'], ['the house', 'that Jack built']]
     expected = data
     assert_equal expected, DefaultOrder.new.order(data)
