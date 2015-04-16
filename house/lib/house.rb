@@ -1,21 +1,8 @@
 class House
-  DATA = [
-    'the horse and the hound and the horn that belonged to',
-    'the farmer sowing his corn that kept',
-    'the rooster that crowed in the morn that woke',
-    'the priest all shaven and shorn that married',
-    'the man all tattered and torn that kissed',
-    'the maiden all forlorn that milked',
-    'the cow with the crumpled horn that tossed',
-    'the dog that worried',
-    'the cat that killed',
-    'the rat that ate',
-    'the malt that lay in',
-    'the house that Jack built']
+  attr_reader :phrases, :formatter
 
-  attr_reader :data, :formatter
-  def initialize(random=false, orderer: DefaultOrder.new, formatter: DefaultFormatter.new)
-    @data      = orderer.order(DATA)
+  def initialize(phrases: HousePhrases.new, formatter: DefaultFormatter.new)
+    @phrases   = phrases
     @formatter = formatter
   end
 
@@ -32,7 +19,19 @@ class House
   end
 
   def parts(num)
-    formatter.format(data.last(num))
+    formatter.format(phrases.last(num))
+  end
+end
+
+class MixedActorActionFixedLastOrder
+  def order(data)
+    data[0..-2].transpose.collect {|row| row.shuffle}.transpose + data.last
+  end
+end
+
+class FixedLastRandomOrder
+  def order(data)
+    data[0..-2].shuffle + data.last
   end
 end
 
@@ -60,11 +59,45 @@ class DefaultFormatter
   end
 end
 
-puts "\nRandomHouse"
-puts House.new(orderer: RandomOrder.new).line(12)
+class HousePhrases
+  include Enumerable
 
-puts "\nEchoHouse"
-puts House.new(formatter: EchoFormatter.new).line(12)
+  DATA = [
+    ['the horse and the hound and the horn', 'that belonged to'],
+    ['the farmer sowing his corn', 'that kept'],
+    ['the rooster that crowed in the morn', 'that woke'],
+    ['the priest all shaven and shorn', 'that married'],
+    ['the man all tattered and torn', 'that kissed'],
+    ['the maiden all forlorn', 'that milked'],
+    ['the cow with the crumpled horn', 'that tossed'],
+    ['the dog', 'that worried'],
+    ['the cat', 'that killed'],
+    ['the rat', 'that ate'],
+    ['the malt', 'that lay in'],
+    ['the house', 'that Jack built']]
 
-puts "\nRandomEchoHouse"
-puts House.new(orderer: RandomOrder.new, formatter: EchoFormatter.new).line(12)
+  attr_reader :data
+  def initialize(orderer: DefaultOrder.new)
+    @data = orderer.order(DATA)
+  end
+
+  def each(&block)
+    data.each{|phrase| block.call(phrase)}
+  end
+
+  def last(n)
+    data.last(n)
+  end
+end
+
+puts "\nMixedActorActionFixedLastOrder"
+puts House.new(phrases: HousePhrases.new(orderer: MixedActorActionFixedLastOrder.new)).line(12)
+
+puts "\nFixedLastRandomOrder"
+puts House.new(phrases: HousePhrases.new(orderer: FixedLastRandomOrder.new)).line(12)
+
+# puts "\nEchoHouse"
+# puts House.new(formatter: EchoFormatter.new).line(12)
+
+# puts "\nRandomEchoHouse"
+# puts House.new(orderer: RandomOrder.new, formatter: EchoFormatter.new).line(12)
