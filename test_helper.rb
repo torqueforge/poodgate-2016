@@ -1,3 +1,3 @@
-gem 'minitest', '~> 5.6'
+gem 'minitest', '~> 5.8'
 require 'minitest/autorun'
 require 'minitest/pride'
