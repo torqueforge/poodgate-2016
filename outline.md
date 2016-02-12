@@ -62,7 +62,7 @@ If they don't know one another, ask them to stand up and arrange themselves in a
 
 Once they're paired, get the sanity test running on everyone's machine.
 
-**Say:** 
+**Say:**
 
 * There’s a readme in your repo
 * Following the directions to run the sanity test
@@ -230,6 +230,7 @@ Repeat the Bottles Retrospective Questions
 
 By the end of Show & Tell, they should have picked a winner for Shameless Green.
 
+**LUNCH**
 
 ### House, Shameless to DRY
 
@@ -245,20 +246,20 @@ Ask for a volunteer to type. Have them do a ```git pull``` and tell them you'll 
 
 
 #### When to Refactor
-Make them define the word 'refactor': 
+Make them define the word 'refactor':
 "Change the structure/arrangement of code without altering its behavior."
 
 Ask them if they use the word 'refactor' to mean implementing _new_ behavior. (They'll say yes.)  This is not refactoring.
 
-**Ask:** 
+**Ask:**
 
-  * What does shameless green reveal about the domain of House? 
-    (There are 12 cases/lines) 
+  * What does shameless green reveal about the domain of House?
+    (There are 12 cases/lines)
 
-  * What is the algorithm for building a line? 
+  * What is the algorithm for building a line?
     (It's cumulative, but you can't tell from the code.)
 
-  * What annoys you most about this code? 
+  * What annoys you most about this code?
     (The duplication of strings.)
 
   * Should you 'refactor' your current implementation house?  I.e., should you do more?
@@ -328,10 +329,10 @@ Make them mob all the way through DRYing out the House strings.
 
 Things you might ask afterwards:
 
-  * Who hates this technique? Who loves it? (love/hate breaks down across experience lines) 
+  * Who hates this technique? Who loves it? (love/hate breaks down across experience lines)
   * If you hate it, why?
   * Can you imagine this technique being useful?  In what situation?
-  * Is it slow, or just boring? 
+  * Is it slow, or just boring?
   * Have you ever written code for 15 or 20 minutes and then had to throw it all away, or dug so deep a hole that you did git reset --hard?
   * What was wrong?  You thought you knew where you were going, but couldn’t get there.
   * With this technique, how much complexity ends up in the code that you don’t need?
@@ -341,11 +342,10 @@ Remind them:
   * It is not inevitable that your production code be the way it is.
   * Your tendency to want to move fast, tendency to want to be clever/smart/complicated
 
-**LUNCH**
+
 
 ### House, They do Shameless to DRY
-
-1:00PM
+2:00PM
 
 Consider asking them to switch pairs.
 
@@ -360,8 +360,9 @@ Tell them:
 
 
 ## 99 Bottles, Rodux
+2:15PM ish
 
-1:45PM ish
+2:45 at MDLive
 
 ### 99 Bottles, Shameless Green
 
@@ -373,9 +374,15 @@ Tell them:
 * you get 15 minutes
 * remember how well copy/paste worked for House
 
-At the 25 minute mark, ask if they'll be done.  If some say no, ask how much more time they need and add that amount to the timer.
+At the 10 minute mark, ask if they'll be done.  If some say no, ask how much more time they need and add that amount to the timer.
 
 ### 99 Bottles, Shameless Green Show & Tell
+
+
+-----
+Don't need bakeoff any more, I don't think.
+-----
+
 
 ***Tell them:***
 
@@ -391,7 +398,7 @@ They might put evil pair code in #verse, #verses and #song to pass the tests.  I
 
 * What responsibility does #verse have? (produce any verse)
 * What about #verses?  (call #verse for any range of verse numbers, or produce all the verses?)
-* What about #song? 
+* What about #song?
 
 Only #verse is responsible for producing a verse, the other methods are responsible for algorithms.
 
@@ -469,7 +476,7 @@ You should deal with new requirements in two steps.
 
 Questions they should ask when thinking about a new requirement:
 
-  * Flowchart questions: 
+  * Flowchart questions:
     * is this code open/closed to 6-packs
     * do you know how to make it open/closed
     * fix the most approachable sin
@@ -493,7 +500,7 @@ Rotate around the room, making small groups responsible for telling the typist t
 * don't type along; you'll each do this tomorrow morn.
 * if you feel the urge to jump vertically, don't stray from the path, just write your issue down. Make a TODO list if it makes you feel better about not going on a tangent. You can go back to it later.
 
-As they mob this: 
+As they mob this:
 
   * point out that the flocking rules cause you to write methods that are mini examples of open/closed.  We put 'if' statements in the methods to make the methods 'open' to use in new places.
   * remember that they'll encounter a Liskov violation when they try to send capitalize to #amount so that, in the 0 case, 'no more' will turn into 'No more'.  They should send #to_s to the number inside of the #amount method.  The method should return a trustworthy object; it should return something that understands #capitalize.
@@ -520,7 +527,7 @@ Go over survey publicly
 
 Do 'Reflect on What I Learned' posters:
 
-* get in groups of 4 or 5 
+* get in groups of 4 or 5
 (have them count off going around the room, which creates groups made of folks who are sitting far apart)
 * discuss what you learned yesterday
 * take a wall post-it and draw something that represents it, or...
@@ -540,6 +547,8 @@ Update Post-it goals during break.
 ### 99 Bottles, They do Shameless Green to DRY
 10:00am
 
+OCTanner at 10:45
+
 Make sure they 'git pull', which should get them the 'Shameless' from which we demoed
 
 ***Say:***
@@ -558,7 +567,7 @@ You should not need a Show & Tell, but if people go wrong in creative ways it ca
 Even if you don't do a Show & Tell, get them to talk to each other about how it went.
 
 ***Ask:***
-  
+
   * was this easy?
   * was it interesting or boring?
   (They may avoid confessing that they were bored for fear of hurting your feelings. Make sure they know you'll be happy if they describe this as boring. Boring is good.)
@@ -600,7 +609,7 @@ Even if you don't do a Show & Tell, get them to talk to each other about how it 
   * what do you notice about method shape?
   (methods with if statements have a common shape)
   * do methods with if statements contain any code other than the if statement?
-  (no) 
+  (no)
   (remind them that their pre-test bottles wasn't like this at all)
   (each true/false branch is the most atomic thing at the intersection of the concept named by the method and a specific value of number)
   * if you added the private keyword, where would you put it?
@@ -678,7 +687,7 @@ Once Extract Class is done, ask:
   (the methods all switch on some explicit value of 'number')
   * what concept does 'number' represent?
   (the number of bottles)
-  * does any method have more than one responsibility? 
+  * does any method have more than one responsibility?
   (no, each branch of each conditional returns the smallest atomic idea)
 
 ***Ask:***
@@ -707,6 +716,10 @@ have them give 5 minute presentations (this is a great opportunity for them to n
 Their presentation should include a definition, examples (in code and/or in life) and places in class or in their own applications where they follow/break the rule.
 
 **SHORT BREAK**
+
+
+OCTanner started they do Extract Class at 3:20
+
 
 ### MOB 99 Bottles, Conditional to Polymorphism
 
@@ -745,7 +758,7 @@ Delete everything but what's needed for 0.
 
 In Bottles you now need to get a subclass of the _right_ class, based on the value of the Fixnum.  
 
-Go into Bottles and get an instance of BottleNumber0 for the 0 case. Since the following code knows the name of the BottleNumber class in two places we'd have to change this code in both places to conditionally get a new BottleNumber or BottleNumber0. 
+Go into Bottles and get an instance of BottleNumber0 for the 0 case. Since the following code knows the name of the BottleNumber class in two places we'd have to change this code in both places to conditionally get a new BottleNumber or BottleNumber0.
 
     def verse(number)
       bottle_number      = BottleNumber.new(number)
@@ -898,7 +911,7 @@ For however long it takes.
 Let's drive them into a hole using inheritance.
 
 RandomHouse Instructions:
-  * Randomize the list ONCE before you start producing the Tale. 
+  * Randomize the list ONCE before you start producing the Tale.
       * Don't randomize over and over again, randomize once!
   * The rules are: you can't use a conditional, and House must be open to the new requirement.
   * Tell them that inheritance is perfect and to go write it.
@@ -942,7 +955,7 @@ Make them demo House, random house, echo house and random echo house.
 
 Once they get this done, continue to add new variants.  All previous variants must continue to work, plus
   * Hold 'the house the Jack built' last, shuffle only lines 1-11.
-  * Mix up actors 'the malt' and actions 'that lay in'. 
+  * Mix up actors 'the malt' and actions 'that lay in'.
   Each line has a trailing 'that'.  This final, trailing 'that' separates the actor from the action.
   * Mix up actors 'the priest', modifiers 'all shaven and shorn' and actions 'the married'.
   Not every line has a modifier, assume the modifier is '' if it doesn't exist.
@@ -975,4 +988,3 @@ pending
   I want the subclasses to be a complete specialization of all the behavior in the superclass. We have constrained the superclass to the behavior that we want to override.
 
   objects at the core of the domain should probably not use inheritance.
-
