@@ -85,6 +85,7 @@ Once they're paired, get the sanity test running on everyone's machine.
 
 Set the timer for 30 minutes.
 9:15 - 9:45
+UserTesting started at 9:30
 
 * we interrupted you, that’s frustrating.
 * we are annoying you on purpose
@@ -238,7 +239,7 @@ By the end of Show & Tell, they should have picked a winner for Shameless Green.
 Push a version of House Shameless Green to master.  This can be one of the ones they just wrote, or mine.  To get mine:
 
     git checkout master
-    git checkout origin/house_1_shameless_green -- house/
+    git checkout origin/house_1_shameless -- house/
     git commit -m 'shameless house'
     git push origin master
 
@@ -270,15 +271,6 @@ Ask them if they use the word 'refactor' to mean implementing _new_ behavior. (T
 #### How to Refactor
 This is the start of DRYing out the strings using a very specific refactoring technique.
 
-##### The big picture
-
-1) Parse some code.
-2) Execute the code without using the result. (step is sometimes skipped)
-3) Execute the code and use the result
-4) Delete unused code.
-
-Simple rules.  Like flocking or schooling rules, seemingly complex behavior emerges.
-
 ##### The specific plan
 1) find the strings that are most alike
 2) find the smallest difference between them
@@ -286,6 +278,15 @@ Simple rules.  Like flocking or schooling rules, seemingly complex behavior emer
 4) try to make changes only on a single line of code (can't always, but try)
 5) run the tests after each change
 6) if the tests fail, undo and make a better change
+
+##### To make the actual change (step 3 above)
+
+1) Parse some code.
+2) Execute the code without using the result. (step is sometimes skipped)
+3) Execute the code and use the result
+4) Delete unused code.
+
+Simple rules.  Like flocking or schooling rules, seemingly complex behavior emerges.
 
 ##### Other things to say
 Never chase after red; if the tests fail, undo and make a change that leaves the tests green.
@@ -346,6 +347,7 @@ Remind them:
 
 ### House, They do Shameless to DRY
 2:00PM
+UserTesting at 1:30PM
 
 Consider asking them to switch pairs.
 
@@ -360,8 +362,6 @@ Tell them:
 
 
 ## 99 Bottles, Rodux
-2:15PM ish
-
 2:45 at MDLive
 
 ### 99 Bottles, Shameless Green
@@ -640,6 +640,7 @@ Yeah, we wish we had a smarter number, and that's the next refactoring.
 ### 99 Bottles, Mob DRY to Extract class
 
 11:00am-ish
+11:30 so off to lunch at UserTesting
 
 Get the correct code into master, either the DRY solution they just created, or the one from the repo.
 
