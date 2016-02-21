@@ -54,6 +54,10 @@ Show the repo on the projector or write it on the board
 * For the next three days you’ll either be working (writing code) or talking to each other
 * We don’t like to be talked at so you'll be writing code right away
 
+How much Ruby?
+How much TDD?
+How much pairing?
+
 Ask if they have experience pairing.  If they don't, discuss how pairing works.
 Have them put themselves into pairs across Ruby and OOD experience.
 
@@ -348,6 +352,7 @@ Remind them:
 ### House, They do Shameless to DRY
 2:00PM
 UserTesting at 1:30PM
+uminn2 at 2:3PM
 
 Consider asking them to switch pairs.
 
@@ -639,8 +644,10 @@ Yeah, we wish we had a smarter number, and that's the next refactoring.
 
 ### 99 Bottles, Mob DRY to Extract class
 
-11:00am-ish
 11:30 so off to lunch at UserTesting
+11:30 at UMinn
+
+**LUNCH** is very often here
 
 Get the correct code into master, either the DRY solution they just created, or the one from the repo.
 
@@ -699,11 +706,10 @@ Once Extract Class is done, ask:
 
 O, my, we've managed to make things even worse.  Let's have...
 
-**LUNCH**
 
 ### 99 Bottles, They do DRY to Extract class
+If they mob this after lunch, then make SOLID posters before they pair on this, to give them time to forget.
 
-1:00pm
 
 Make sure they all ```git pull```.
 
@@ -720,6 +726,7 @@ Their presentation should include a definition, examples (in code and/or in life
 
 
 OCTanner started they do Extract Class at 3:20
+UMinn1 started they do Extract Class at ?:??
 
 
 ### MOB 99 Bottles, Conditional to Polymorphism
