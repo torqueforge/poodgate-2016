@@ -60,6 +60,8 @@ Things to Watch:
     http://bit.ly/sandi_metz_less_path_to_better_design
     http://bit.ly/sandi_metz_make_a_mess
     http://bit.ly/matt_wynne_hexagonal_rails
+    http://bit.ly/sandi_metz_nothing_is_something
+    http://bit.ly/peter_harkins_what_comes_after_mvc
 
   Refactoring
     http://bit.ly/neal_ford_rampant_emergence
@@ -77,13 +79,11 @@ Things to Watch:
   Pointy Headed
     http://bit.ly/rich_hickey_simple_made_easy
 
-  Architecture
-    http://bit.ly/chris_hunt_soa_at_square
-    http://bit.ly/wilkinson_zacharakis_soa_without_tears_lumosity
-    http://bit.ly/pignata_asynch_SOA_design
-    http://bit.ly/brian_morton_services_and_rails_yammer
-
   Blog posts:
+  General:
+    http://www.sandimetz.com/blog/
+    http://devblog.avdi.org/
+
   Dependency Inversion:
     http://abernardes.github.io/2014/11/04/inverting-dependencies.html
 
