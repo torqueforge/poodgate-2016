@@ -59,7 +59,6 @@ Things to Watch:
     http://bit.ly/sandi_metz_solid
     http://bit.ly/sandi_metz_less_path_to_better_design
     http://bit.ly/sandi_metz_make_a_mess
-    http://bit.ly/matt_wynne_hexagonal_rails
     http://bit.ly/sandi_metz_nothing_is_something
     http://bit.ly/peter_harkins_what_comes_after_mvc
 
