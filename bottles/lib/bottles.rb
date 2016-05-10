@@ -9,10 +9,10 @@ class Bottles
   end
 
   def verse(number)
-    "#{amount(number).capitalize} #{container(number)} of beer on the wall, " +
-    "#{amount(number)} #{container(number)} of beer.\n" +
+    "#{label(number).capitalize} #{container(number)} of beer on the wall, " +
+    "#{label(number)} #{container(number)} of beer.\n" +
     "#{action(number)}, " +
-    "#{amount(successor(number))} #{container(successor(number))} of beer on the wall.\n"
+    "#{label(successor(number))} #{container(successor(number))} of beer on the wall.\n"
   end
 
   def container(number)
@@ -31,7 +31,7 @@ class Bottles
     end
   end
 
-  def amount(number)
+  def label(number)
     if number == 0
       "no more"
     else
